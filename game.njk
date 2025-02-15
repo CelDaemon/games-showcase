@@ -1,0 +1,28 @@
+---
+pagination:
+  data: games
+  size: 1
+  alias: game
+layout: layout.njk
+permalink: "games/{{ game.name | slugify }}/"
+eleventyComputed:
+  title: "{{ game.name }}"
+---
+
+<h1>{{ game.name }}</h1>
+
+<p>{{ game.description }}</p>
+
+<div>Rating: {{ game.rating }}</div>
+<div>Developer: {{ game.developer }}</div>
+
+<h3>Tags</h3>
+
+<ul>
+  {% for tag in game.tags %}
+    <li>{{ tag }}</li>
+  {% endfor %}
+</ul>
+
+<h3>System Requirements</h3>
+<div>OS: {{ game.system_requirements.operating_system | dump }}</div>

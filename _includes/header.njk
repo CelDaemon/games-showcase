@@ -1,0 +1,14 @@
+<header>
+    <nav>
+        <div>
+            {%- for game in games %}
+                <a href="/games/{{ game.name | slugify }}/" class="nav-item"> {{ game.name }}</a>
+            {% endfor -%}
+        </div>
+        <div>
+            <a href="/games/" class="nav-item">
+                Game Picker
+            </a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,13 @@
+---
+title: Game Catalogue
+---
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        {% include "header.njk" %}
+        {{ content | safe }}
+    </body>
+</html>

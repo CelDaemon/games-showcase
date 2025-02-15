@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Celeste",
+        "description": "Meow Meow Meow Meow Meow Meow Meow Meow Meow",
+        "tags": ["platformer", "difficult", "pixelart"],
+        "rating": 5,
+        "genre": "platformer",
+        "developer": "Extremely OK Games",
+        "system_requirements": {
+            "operating_system": {
+                "windows": true,
+                "mac": true,
+                "linux": true
+            }
+        }
+    },
+    {
+        "name": "Persona 5"
+    },
+    {
+        "name": "Terraria"
+    }
+]
