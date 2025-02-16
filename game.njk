@@ -3,7 +3,7 @@ pagination:
   data: games
   size: 1
   alias: game
-layout: layout.njk
+layout: layout
 permalink: "games/{{ game.name | slugify }}/"
 eleventyComputed:
   title: "{{ game.name }}"
