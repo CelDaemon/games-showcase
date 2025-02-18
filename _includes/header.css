@@ -2,10 +2,39 @@ nav {
     display: flex;
     justify-content: space-between;
     padding-inline: 1rem;
+    height: 70px;
+}
+header {
+    border-bottom: 1px solid CanvasText;
+}
+.nav-section {
+    height: 100%;
+}
+.nav-item {
+    padding-inline: 1rem;
+    height: 100%;
+    align-content: center;
+    display: inline-block;
+    text-decoration: unset;
+    color: unset;
+    font-size: larger;
 }
 
-.nav-item {
-    padding: 1rem 2rem;
-    display: inline-block;
-    background-color: red;
+.nav-item:hover {
+    background-color: color-mix(in lab, Canvas 90%, #4d45fd 20%);
+    @media(prefers-color-scheme: dark) {
+        background-color: color-mix(in lab, Canvas 90%, #4d45fd 20%);
+    }
+}
+.nav-active,.nav-active:hover {
+    background-color: #4d45fd;
+    color: white;
+}
+
+
+
+@media(max-width: 700px) { 
+    .nav-item:not(.game-picker) {
+        display: none;
+    }
 }

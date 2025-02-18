@@ -1,0 +1,29 @@
+.front-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.front-container > div {
+    padding-block: 1rem;
+}
+
+.meta-container {
+    min-width: 300px;
+}
+.rating-icon {
+    display: inline-block;
+    width: 30px;
+    font-size: 30px;
+    overflow: hidden;
+    font-variation-settings:
+  'FILL' 1,
+  'wght' 500,
+  'GRAD' 200,
+  'opsz' 48;
+    vertical-align: middle;
+    user-select: none;
+}
+
+.game-name {
+    margin: 0;
+}

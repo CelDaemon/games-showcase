@@ -2,6 +2,7 @@
     "private": true,
     "type": "module",
     "devDependencies": {
-        "@11ty/eleventy": "^3.0.0"
+        "@11ty/eleventy": "^3.0.0",
+        "@11ty/eleventy-plugin-vite": "^6.0.0"
     }
 }

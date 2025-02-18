@@ -1,0 +1,14 @@
+@import url("/_includes/header.css");
+:root {
+    color-scheme: dark light;
+    font-family: sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: unset;
+}
+main {
+    margin: 8px;
+}
