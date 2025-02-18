@@ -1,7 +1,4 @@
-import EleventyVite from "@11ty/eleventy-plugin-vite";
-
-
-export default function(config) {
-    config.addPlugin(EleventyVite);
-    config.addPassthroughCopy("**/*.css")
+export default async function(eleventyConfig) {
+	eleventyConfig.addPassthroughCopy("robots.txt");
+	eleventyConfig.addWatchTarget("**/*.{css,js}");
 }
