@@ -18,7 +18,7 @@ style: "/game.css"
     </div>
     <div class="tags">
       {% for tag in game.tags %}
-        <span>{{ tag | forceCapitalize }}</span>
+        <span class="tag">{{ tag | forceCapitalize }}</span>
       {% endfor %}
     </div>
   </div>
@@ -48,7 +48,6 @@ style: "/game.css"
         <span class="material-symbols-rounded icon players-icon" filled>
           {% if game.players === 'singleplayer' %}
             person
-          {% elif game.players === 'pair' %}
           {% elif game.players === 'multiplayer' %}
             groups
           {% endif %}

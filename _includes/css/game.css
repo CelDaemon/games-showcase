@@ -1,27 +1,37 @@
 .front-container {
     display: flex;
-    flex-flow: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 2rem;
-    background-color: color-mix(in lab, Canvas, var(--accent-color) 20%);
     padding: 1.5rem;
     border-radius: 15px;
+    @media(prefers-color-scheme: dark) {
+        background-color: color-mix(in lab, var(--background-color), var(--accent-color) 20%);
+    }
+    @media(prefers-color-scheme: light) {
+        border: 2px solid var(--accent-color);
+    }
 }
+
 .front-main-container {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     justify-content: space-between;
+    width: 600px;
 }
+
 .meta-container {
-    min-width: 300px;
+    flex-grow: 1;
 }
+
 .meta-container > div {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px color-mix(in lab, Canvas, CanvasText 40%) solid;
+    border-bottom: 1px color-mix(in lab, var(--background-color), CanvasText 40%) solid;
     padding-block: 0.5rem;
     margin-block: 0.5rem;
 }
+
 .icon {
     --filled: 0;
     --size: 30px;
@@ -49,4 +59,15 @@
 .game-name {
     margin: 0;
     margin-bottom: 1rem;
+}
+.tags {
+    margin-top: 1.5rem;
+}
+.tag {
+    background-color: var(--accent-color);
+    padding: 0.2rem 1rem;
+    border-radius: 15px;
+    color: white;
+    margin: 0.2rem;
+    display: inline-block;
 }

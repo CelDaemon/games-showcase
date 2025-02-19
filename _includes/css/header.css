@@ -21,7 +21,7 @@ header {
 }
 
 .nav-item:hover {
-    background-color: color-mix(in lab, Canvas, var(--accent-color) 20%);
+    background-color: color-mix(in lab, var(--background-color), var(--accent-color) 20%);
 }
 .nav-active,.nav-active:hover {
     background-color: var(--accent-color);
