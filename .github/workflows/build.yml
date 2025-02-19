@@ -34,7 +34,7 @@ jobs:
           path: 'live'
       - run: git config --global user.name 'github-actions[bot]' && git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
         name: Setup Git User
-      - run: git rm -rf '*' || true
+      - run: find . -type f -not -name 'CNAME' -not -name '.nojekyll' -not -path './.git/*' -print
         name: Remove Old Files
         working-directory: 'live'
       - uses: actions/download-artifact@v4
@@ -45,6 +45,9 @@ jobs:
       - run: touch .nojekyll
         working-directory: 'live'
         name: Disable Jekyll
-      - run: git add -A && git commit --allow-empty -m '[${{ github.event.head_commit.id }}] ${{ github.event.head_commit.message }}' && git push
+      - run: git add -A && git commit --allow-empty -m "[$COMMIT_ID] $COMMIT_MESSAGE" && git push
         working-directory: 'live'
         name: Commit Results
+        env:
+          COMMIT_ID: ${{ github.event.head_commit.id }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
