@@ -3,7 +3,7 @@
     font-family: sans-serif;
     --accent-color: #4d45fd;
     --accent-text-color: white;
-    --background-color: #d9d4e2;
+    --background-color: #f4f4f4;
     @media(prefers-color-scheme: dark) {
         --background-color: #252429;
     }
