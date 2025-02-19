@@ -1,23 +1,21 @@
+
 :root {
-    color-scheme: dark light;
+    color-scheme: light dark;
     font-family: sans-serif;
-    --accent-color: #4d45fd;
-    --accent-text-color: white;
-    --background-color: #f4f4f4;
-    @media(prefers-color-scheme: dark) {
-        --background-color: #252429;
-    }
+    color: var(--text);
 }
 * {
     box-sizing: border-box;
+    margin: unset;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
 }
 body {
-    margin: unset;
-    background-color: var(--background-color);
+    background-color: var(--background);
 }
 main {
     margin-top: 1rem;
-    padding: 8px;
     max-width: 1000px;
     margin-inline: auto;
 }

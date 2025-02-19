@@ -7,11 +7,11 @@ layout: layout
 permalink: "games/{{ game.name | slugify }}/"
 eleventyComputed:
   title: "{{ game.name }}"
+  description: "{{ game.description}}"
 style: "/game.css"
 ---
-
-<div class="front-container">
-  <div class="front-main-container">
+<div class="front-container card">
+  <div class="description-container">
     <div>
       <h1 class="game-name">{{ game.name }}</h1>
       {{ game.description }}
@@ -26,6 +26,7 @@ style: "/game.css"
     <div>
       Rating
       {% set rating = ((game.rating * 2) | round) / 2 %}
+      <!-- rating: {{ game.rating }} -->
       <span>
         {% for i in range(1, 6) %}
           {% set fraction = i - rating %}
@@ -43,6 +44,7 @@ style: "/game.css"
     </div>
     <div>
       Players
+      <!-- players: {{ game.players }} -->
       <span>
         {{ game.players | capitalize }}
         <span class="material-symbols-rounded icon players-icon" filled>
@@ -56,15 +58,25 @@ style: "/game.css"
     </div>
     <div>
       Genre
+      <!-- genre: {{ game.genre }} -->
       <span>{{ game.genre | forceCapitalize }}</span>
     </div>
     <div>
       Developer
+      <!-- developer: {{ game.developer }} -->
       <span>{{ game.developer | forceCapitalize }}</span>
     </div>
     <div>
       Release Date
+      <!-- release: {{ game.release }} -->
       <span>{{ game.release }}</span>
     </div>
   </div>
 </div>
+
+<div class="card">
+  <h2>System Requirements</h2>
+  {% if game.system_requirements.operating_system.windows %}
+    <img src="/img/windows.svg">
+  {% endif %}
+</divx>

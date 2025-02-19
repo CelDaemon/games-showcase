@@ -5,7 +5,7 @@ nav {
     height: 70px;
 }
 header {
-    border-bottom: 1px solid CanvasText;
+    border-bottom: 1px solid var(--text);
 }
 .nav-section {
     height: 100%;
@@ -21,11 +21,11 @@ header {
 }
 
 .nav-item:hover {
-    background-color: color-mix(in lab, var(--background-color), var(--accent-color) 20%);
+    background-color: color-mix(in lab, transparent, var(--accent) 20%);
 }
 .nav-active,.nav-active:hover {
-    background-color: var(--accent-color);
-    color: var(--accent-text-color);
+    background-color: var(--accent);
+    color: var(--dark-text);
 }
 
 
