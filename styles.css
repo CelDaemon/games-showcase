@@ -1,0 +1,87 @@
+:root {
+    color-scheme: dark light;
+    font-family: sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: unset;
+}
+main {
+    margin: 8px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    height: 70px;
+}
+header {
+    border-bottom: 1px solid CanvasText;
+}
+.nav-section {
+    height: 100%;
+}
+.nav-item {
+    padding-inline: 1rem;
+    height: 100%;
+    align-content: center;
+    display: inline-block;
+    text-decoration: unset;
+    color: unset;
+    font-size: larger;
+}
+
+.nav-item:hover {
+    background-color: color-mix(in lab, Canvas 90%, #4d45fd 20%);
+    @media(prefers-color-scheme: dark) {
+        background-color: color-mix(in lab, Canvas 90%, #4d45fd 20%);
+    }
+}
+.nav-active,.nav-active:hover {
+    background-color: #4d45fd;
+    color: white;
+}
+
+
+
+@media(max-width: 700px) { 
+    .nav-item:not(.game-picker) {
+        display: none;
+    }
+}
+.front-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.front-container > div {
+    padding-block: 1rem;
+}
+
+.meta-container {
+    min-width: 300px;
+}
+.rating-icon {
+    display: inline-block;
+    width: 30px;
+    font-size: 30px;
+    overflow: hidden;
+    --filled: 0;
+    font-variation-settings:
+  'FILL' var(--filled),
+  'wght' 500,
+  'GRAD' 200,
+  'opsz' 48;
+    vertical-align: middle;
+    user-select: none;
+    color: gold;
+}
+.rating-icon[filled] {
+    --filled: 1;
+}
+
+.game-name {
+    margin: 0;
+}
