@@ -9,7 +9,9 @@ body {
     margin: unset;
 }
 main {
-    margin: 8px;
+    padding: 8px;
+    max-width: 1000px;
+    margin-inline: auto;
 }
 nav {
     display: flex;
