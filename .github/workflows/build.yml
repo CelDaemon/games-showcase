@@ -42,6 +42,9 @@ jobs:
         with:
           name: site.zip
           path: live
+      - run: touch .nojekyll
+        working-directory: 'live'
+        name: Disable Jekyll
       - run: git add -A && git commit --allow-empty -m '[${{ github.event.head_commit.id }}] ${{ github.event.head_commit.message }}' && git push
         working-directory: 'live'
         name: Commit Results
