@@ -32,7 +32,7 @@ jobs:
         with:
           ref: 'live'
           path: 'live'
-      - run: git config --global user.name 'github-actions[bot]' && git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - run: git config --global user.name 'AvielSkrypnyk' && git config --global user.email 'skrypnykaviel@gmail.com'
       - run: git rm -rf '*' || true
         name: Remove Old Files
         working-directory: 'live'
