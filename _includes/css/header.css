@@ -21,14 +21,11 @@ header {
 }
 
 .nav-item:hover {
-    background-color: color-mix(in lab, Canvas 90%, #4d45fd 20%);
-    @media(prefers-color-scheme: dark) {
-        background-color: color-mix(in lab, Canvas 90%, #4d45fd 20%);
-    }
+    background-color: color-mix(in lab, Canvas, var(--accent-color) 20%);
 }
 .nav-active,.nav-active:hover {
-    background-color: #4d45fd;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
 }
 
 

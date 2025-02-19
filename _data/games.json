@@ -7,6 +7,7 @@
         "release": "25 Jan, 2018",
         "genre": "platformer",
         "developer": "Extremely OK Games",
+        "players": "singleplayer",
         "system_requirements": {
             "operating_system": {
                 "windows": true,
@@ -26,11 +27,12 @@
     {
         "name": "Persona 5 Royal",
         "description": " Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!",
-        "tags": ["jrpg", "story", "anime"],
+        "tags": ["JRPG", "story", "anime"],
         "rating": 4.5,
         "release": "21 Oct, 2022",
-        "genre": "rpg",
+        "genre": "RPG",
         "developer": "ATLUS",
+        "players": "singleplayer",
         "system_requirements": {
             "operating_system": {
                 "windows": true,
@@ -50,11 +52,12 @@
     {
         "name": "Terraria",
         "description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game.",
-        "tags": ["sandbox", "survival", "2d"],
+        "tags": ["sandbox", "survival", "2D"],
         "rating": 5,
         "release": "16 May, 2011",
-        "genre": "rpg",
+        "genre": "RPG",
         "developer": "Re-Logic",
+        "players": "multiplayer",
         "system_requirements": {
             "operating_system": {
                 "windows": true,

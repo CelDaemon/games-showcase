@@ -1,6 +1,8 @@
 :root {
     color-scheme: dark light;
     font-family: sans-serif;
+    --accent-color: #4d45fd;
+    --accent-text-color: white;
 }
 * {
     box-sizing: border-box;
@@ -9,6 +11,7 @@ body {
     margin: unset;
 }
 main {
+    margin-top: 1rem;
     padding: 8px;
     max-width: 1000px;
     margin-inline: auto;
