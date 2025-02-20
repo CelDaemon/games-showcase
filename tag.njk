@@ -3,11 +3,11 @@ pagination:
   data: gameTags
   size: 1
   alias: tag
-permalink: "tags/{{ tag | slugify }}/"
+permalink: "{{ tag | tagUrl }}"
 layout: layout
 ---
 {% for game in games %}
     {% if game | contains(tag, 'tags') %}
-        <a href="/games/{{ game.name | slugify }}/">{{ game.name }}</a>
+        <a href="{{ game | gameUrl }}">{{ game.name }}</a>
     {% endif %}
 {% endfor %}

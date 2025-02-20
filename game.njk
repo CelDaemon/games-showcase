@@ -4,14 +4,15 @@ pagination:
   size: 1
   alias: game
 layout: layout
-permalink: "games/{{ game.name | slugify }}/"
+permalink: "{{ game | gameUrl }}"
 eleventyComputed:
   title: "{{ game.name }}"
   description: "{{ game.description }}"
 style: "/game.css"
 tags: game
 ---
-<section class="front-container card">
+
+<section class="main-card card">
   <div class="description-container">
     <div>
       <h1 class="game-name">{{ game.name }}</h1>
@@ -19,7 +20,7 @@ tags: game
     </div>
     <div class="tags">
       {% for tag in game.tags %}
-        <a href="/tags/{{ tag | slugify }}" class="tag">{{ tag | forceCapitalize }}</a>
+        <a href="{{ tag | tagUrl }}" class="tag">{{ tag | forceCapitalize }}</a>
       {% endfor %}
     </div>
   </div>
@@ -27,7 +28,6 @@ tags: game
     <div>
       Rating
       {% set rating = ((game.rating * 2) | round) / 2 %}
-      <!-- rating: {{ game.rating }} -->
       <span class="meta-value">
         {% for i in range(1, 6) %}
           {% set fraction = i - rating %}
@@ -45,7 +45,6 @@ tags: game
     </div>
     <div>
       Players
-      <!-- players: {{ game.players }} -->
       <span class="meta-value">
         {{ game.players | capitalize }}
         <span class="material-symbols-rounded icon players-icon" filled>
@@ -59,33 +58,39 @@ tags: game
     </div>
     <div>
       Genre
-      <!-- genre: {{ game.genre }} -->
       <span class="meta-value">{{ game.genre | forceCapitalize }}</span>
     </div>
     <div>
       Developer
-      <!-- developer: {{ game.developer }} -->
       <span class="meta-value">{{ game.developer | forceCapitalize }}</span>
     </div>
     <div>
       Release Date
-      <!-- release: {{ game.release }} -->
       <span class="meta-value">{{ game.release }}</span>
     </div>
   </div>
 </section>
 
+{% macro icon(name) %}
+<svg class="icon" viewBox="0 0 24 24">
+  <use href="/img/icons.svg#{{ name }}"></use>
+</svg>
+{% endmacro %}
+
 <div class="card">
   <h2>System Requirements</h2>
   <div>
     {% if game.system_requirements.operating_system.windows %}
-      <span class="icon windows-icon"></span>
+      {{ icon('windows') }}
     {% endif %}
     {% if game.system_requirements.operating_system.linux %}
-      <span class="icon linux-icon"></span>
+      {{ icon('linux') }}
     {% endif %}
     {% if game.system_requirements.operating_system.mac %}
-      <span class="icon mac-icon"></span>
+      {{ icon('mac') }}
+    {% endif %}
+    {% if game.system_requirements.operating_system.proton %}
+      {{ icon('proton') }}
     {% endif %}
   </div>
 </divx>

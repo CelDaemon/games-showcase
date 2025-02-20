@@ -2,7 +2,7 @@
     <nav>
         <div class="nav-section">
             {% for game in games %}
-                {% set url %}/games/{{ game.name | slugify }}/{% endset %}
+                {% set url = game | gameUrl %}
                 <a href="{{ url }}" class="nav-item {% if page.url == url %}nav-active{% endif %}"> {{ game.name }}</a>
             {% endfor %}
         </div>
