@@ -14,10 +14,10 @@ export default async function(eleventyConfig) {
 	});
 	eleventyConfig.addFilter("gameUrl", game => {
 		if(!game || typeof game.name !== "string") throw new Error("Could not generate game url for invalid game");
-		return `/game/${slugify(game.name)}/`;
+		return `/game/${slugify(game.name, {decamelize: false})}/`;
 	});
 	eleventyConfig.addFilter("tagUrl", tag => {
 		if(typeof tag !== "string") throw new Error("Could not generate tag url for invalid tag");
-		return `/tag/${slugify(tag)}/`;
+		return `/tag/${slugify(tag, {decamelize: false})}/`;
 	})
 }
