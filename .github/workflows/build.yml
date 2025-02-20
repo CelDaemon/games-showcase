@@ -20,7 +20,7 @@ jobs:
         name: Upload Files
         with:
           path: _site
-          name: site.zip
+          name: site
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -40,7 +40,7 @@ jobs:
       - uses: actions/download-artifact@v4
         name: Download Files
         with:
-          name: site.zip
+          name: site
           path: live
       - run: touch .nojekyll
         working-directory: 'live'
