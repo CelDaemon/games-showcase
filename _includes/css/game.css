@@ -37,12 +37,16 @@
     margin-block: 0.5rem;
     min-height: 50px;
 }
+.meta-value {
+    text-align: right;
+}
 
 .icon {
     --filled: 0;
     --size: 30px;
     display: inline-block;
     width: var(--size);
+    height: var(--size);
     font-size: var(--size);
     font-variation-settings:
         'FILL' var(--filled),
@@ -68,7 +72,23 @@
     background-color: var(--accent);
     padding: 0.2rem 1rem;
     border-radius: 15px;
-    color: white;
+    color: var(--dark-text);
     margin: 0.2rem;
     display: inline-block;
+    text-decoration: unset;
+}
+
+.windows-icon {
+    mask-image: url("/img/windows.svg");
+    background-color: var(--dark-text);
+}
+
+.linux-icon {
+    mask-image: url("/img/linux.svg");
+    background-color: var(--dark-text);
+}
+
+.mac-icon {
+    mask-image: url("/img/mac.svg");
+    background-color: var(--dark-text);
 }

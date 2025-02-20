@@ -1,0 +1,13 @@
+---
+pagination:
+  data: gameTags
+  size: 1
+  alias: tag
+permalink: "tags/{{ tag | slugify }}/"
+layout: layout
+---
+{% for game in games %}
+    {% if game | contains(tag, 'tags') %}
+        <a href="/games/{{ game.name | slugify }}/">{{ game.name }}</a>
+    {% endif %}
+{% endfor %}
