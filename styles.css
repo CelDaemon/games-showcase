@@ -84,7 +84,7 @@ header {
         display: none;
     }
 }
-.front-container {
+.main-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -122,17 +122,15 @@ header {
     padding-block: 0.5rem;
     margin-block: 0.5rem;
     min-height: 50px;
+    align-items: center;
 }
 .meta-value {
     text-align: right;
 }
 
-.icon {
+.material-symbols-rounded {
     --filled: 0;
     --size: 30px;
-    display: inline-block;
-    width: var(--size);
-    height: var(--size);
     font-size: var(--size);
     font-variation-settings:
         'FILL' var(--filled),
@@ -140,6 +138,12 @@ header {
         'GRAD' 200,
         'opsz' 48;
     vertical-align: middle;
+}
+.icon {
+    --size: 30px;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
     user-select: none;
     overflow: hidden;
     margin-inline: 0.2rem;
@@ -162,19 +166,4 @@ header {
     margin: 0.2rem;
     display: inline-block;
     text-decoration: unset;
-}
-
-.windows-icon {
-    mask-image: url("/img/windows.svg");
-    background-color: var(--dark-text);
-}
-
-.linux-icon {
-    mask-image: url("/img/linux.svg");
-    background-color: var(--dark-text);
-}
-
-.mac-icon {
-    mask-image: url("/img/mac.svg");
-    background-color: var(--dark-text);
 }
