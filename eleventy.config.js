@@ -7,6 +7,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addFilter("contains", (object, value, key = '') => lens(object, key)?.includes(value));
 	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
+	eleventyConfig.addPassthroughCopy("css/*.css");
 	eleventyConfig.addFilter("forceCapitalize", value => {
 		value ??= '';
 		return value.charAt(0).toUpperCase() + value.slice(1);

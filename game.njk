@@ -15,7 +15,7 @@ tags: game
 <section class="main-card card">
   <div class="description-container">
     <div>
-      <h1 class="game-name">{{ game.name }}</h1>
+      <h1>{{ game.name }}</h1>
       {{ game.description }}
     </div>
     <div class="tags">
@@ -47,7 +47,7 @@ tags: game
       Players
       <span class="meta-value">
         {{ game.players | capitalize }}
-        <span class="material-symbols-rounded icon players-icon" filled>
+        <span class="material-symbols-rounded icon" filled>
           {% if game.players === 'singleplayer' %}
             person
           {% elif game.players === 'multiplayer' %}
