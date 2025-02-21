@@ -20,6 +20,7 @@ jobs:
           SITE_URL: '${{ vars.SITE_URL }}'
           SOURCE_URL: '${{ github.server_url }}/${{ github.repository }}/tree/${{ github.sha }}/'
           SOURCE_COMMIT: '${{ github.sha }}'
+          NODE_ENV: production
       - uses: actions/upload-pages-artifact@v3
         name: Upload Files
         with:

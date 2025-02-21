@@ -1,4 +1,5 @@
 import slugify from "@sindresorhus/slugify";
+import process from "process";
 function lens(object, path) {
 	return path.split(".").reduce((object, key) => object && object[key] ? object[key] : null, object);
 }
@@ -24,7 +25,7 @@ function memoize(callback) {
 }
 
 export default async function(eleventyConfig) {
-	eleventyConfig.addFilter("contains", (object, value, key = '') => lens(object, key)?.includes(value));
+	eleventyConfig.addFilter("contains", (object, value, key = "") => lens(object, key)?.includes(value) ?? false);
 	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("css/*.css");
@@ -40,4 +41,5 @@ export default async function(eleventyConfig) {
 		if(typeof tag !== "string") throw new Error("Could not generate tag url for invalid tag");
 		return `/tag/${slugify(tag, {decamelize: false})}/`;
 	}))
+	if(process.env.NODE_ENV === "production") eleventyConfig.addGlobalData("date", "git Last Modified");
 }

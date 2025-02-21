@@ -7,7 +7,6 @@ pagination:
 permalink: "{{ tag | tagUrl }}"
 layout: layout
 tags: page
-date: 'git Last Modified'
 ---
 {% for game in games %}
     {% if game | contains(tag, 'tags') %}
