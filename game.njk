@@ -15,7 +15,7 @@ date: 'git Last Modified'
 ---
 
 <section class="main-card card">
-  <div class="description-container">
+  <div class="description">
     <div>
       <h1>{{ game.name }}</h1>
       {{ game.description }}
@@ -26,8 +26,8 @@ date: 'git Last Modified'
       {% endfor %}
     </div>
   </div>
-  <div class="meta-container">
-    <div>
+  <div class="meta">
+    <div class="meta-item">
       Rating
       {% set rating = ((game.rating * 2) | round) / 2 %}
       <span class="meta-value">
@@ -45,7 +45,7 @@ date: 'git Last Modified'
         {% endfor %}
       </span>
     </div>
-    <div>
+    <div class="meta-item">
       Players
       <span class="meta-value">
         {{ game.players | capitalize }}
@@ -58,15 +58,15 @@ date: 'git Last Modified'
         </span>
       </span>
     </div>
-    <div>
+    <div class="meta-item">
       Genre
       <span class="meta-value">{{ game.genre | forceCapitalize }}</span>
     </div>
-    <div>
+    <div class="meta-item">
       Developer
       <span class="meta-value">{{ game.developer | forceCapitalize }}</span>
     </div>
-    <div>
+    <div class="meta-item">
       Release Date
       <span class="meta-value">{{ game.release }}</span>
     </div>

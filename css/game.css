@@ -11,28 +11,28 @@
     margin-block: 1rem;
     border: 2px solid transparent;
     @media(prefers-color-scheme: dark) {
-        background-color: color-mix(in lab, var(--background), var(--accent) 20%);
+        background-color: color-mix(in oklab, transparent, var(--accent) 20%);
     }
     @media(prefers-color-scheme: light) {
         border-color: var(--accent);
     }
 }
 
-.description-container {
+.description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 600px;
 }
 
-.meta-container {
+.meta {
     flex-grow: 1;
 }
 
-.meta-container > div {
+.meta-item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px color-mix(in lab, var(--background), var(--text) 40%) solid;
+    border-bottom: 1px color-mix(in oklab, transparent, var(--text) 40%) solid;
     padding-block: 0.5rem;
     margin-block: 0.5rem;
     min-height: 50px;

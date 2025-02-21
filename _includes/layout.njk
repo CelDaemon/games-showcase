@@ -24,9 +24,11 @@ description: A site to showcase various games.
     </head>
     <body>
         {% include "header.njk" %}
-        <main>
-            {{ content | safe }}
-        </main>
+        <div class="main-container">
+            <main>
+                {{ content | safe }}
+            </main>
+        </div>
         <footer>
             {% if site.sourceUrl %}
                 Commit <a href="{{ site.sourceUrl }}">{{ site.sourceCommit.slice(0, 7) }}</a>

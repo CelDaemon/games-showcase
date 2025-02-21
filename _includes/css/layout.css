@@ -22,7 +22,9 @@ body {
 }
 main {
     margin-inline: auto;
-    max-width: min(1000px, 100%);
+    max-width: 1000px;
+}
+.main-container {
     flex-grow: 1;
 }
 footer {
