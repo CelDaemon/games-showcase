@@ -29,7 +29,7 @@ description: A site to showcase various games.
         </main>
         <footer>
             {% if site.sourceUrl %}
-                Commit <a href="{{ site.sourceUrl }}">{{ site.sourceCommit }}</a>
+                Commit <a href="{{ site.sourceUrl }}">{{ site.sourceCommit.slice(0, 7) }}</a>
             {% else %}
                 Local Development
             {% endif %}
