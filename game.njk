@@ -17,7 +17,7 @@ date: 'git Last Modified'
 <section class="main-card card">
   <div class="description">
     <div>
-      <h1>{{ game.name }}</h1>
+      <h1 class="game-name">{{ game.name }}</h1>
       {{ game.description }}
     </div>
     <div class="tags">
@@ -79,7 +79,7 @@ date: 'git Last Modified'
 </svg>
 {% endmacro %}
 
-<div class="card">
+<section class="card">
   <h2>System Requirements</h2>
   <div>
     {% if game.system_requirements.operating_system.windows %}
@@ -95,4 +95,4 @@ date: 'git Last Modified'
       {{ icon('proton') }}
     {% endif %}
   </div>
-</divx>
+</section>
