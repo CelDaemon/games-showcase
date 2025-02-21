@@ -16,6 +16,10 @@ jobs:
       - run: npm install
         name: Setup Dependencies
       - run: npx eleventy
+        env:
+          SITE_URL: '${{ vars.SITE_URL }}'
+          SOURCE_URL: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}/'
+          SOURCE_COMMIT: '${{ github.sha }}'
         name: Build Files
       - uses: actions/upload-artifact@v4
         name: Upload Files

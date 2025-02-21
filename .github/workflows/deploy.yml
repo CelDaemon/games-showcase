@@ -18,9 +18,8 @@ jobs:
         name: Build Files
         env:
           SITE_URL: '${{ vars.SITE_URL }}'
-      - run: echo $SITE_URL
-        env:
-          SITE_URL: '${{ vars.SITE_URL }}'
+          SOURCE_URL: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}/'
+          SOURCE_COMMIT: '${{ github.sha }}'
       - uses: actions/upload-pages-artifact@v3
         name: Upload Files
         with:

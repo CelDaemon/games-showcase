@@ -27,5 +27,12 @@ description: A site to showcase various games.
         <main>
             {{ content | safe }}
         </main>
+        <footer>
+            {% if site.commitUrl %}
+                Commit <a href="{{ site.sourceUrl }}">{{ site.sourceCommit }}</a>
+            {% else %}
+                Local Development
+            {% endif %}
+        </footer>
     </body>
 </html>
