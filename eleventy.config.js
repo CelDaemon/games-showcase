@@ -40,6 +40,5 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addFilter("tagUrl", memoize(tag => {
 		if(typeof tag !== "string") throw new Error("Could not generate tag url for invalid tag");
 		return `/tag/${slugify(tag, {decamelize: false})}/`;
-	}))
-	if(process.env.NODE_ENV === "production") eleventyConfig.addGlobalData("date", "git Last Modified");
+	}));
 }
