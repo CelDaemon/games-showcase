@@ -81,3 +81,6 @@
     display: inline-block;
     text-decoration: unset;
 }
+.game-name {
+    font-size: 2rem;
+}
