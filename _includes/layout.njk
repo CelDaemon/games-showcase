@@ -30,8 +30,8 @@ description: A site to showcase various games.
             </main>
         </div>
         <footer>
-            {% if site.sourceUrl %}
-                Commit <a href="{{ site.sourceUrl }}">{{ site.sourceCommit.slice(0, 7) }}</a>
+            {% if site.repositoryUrl %}
+                Source on <a href="{{ site.repositoryUrl }}">Github</a>
             {% else %}
                 Local Development
             {% endif %}

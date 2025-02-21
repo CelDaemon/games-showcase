@@ -1,2 +1,2 @@
 import process from 'process';
-export default {url: process.env.SITE_URL, sourceUrl: process.env.SOURCE_URL, sourceCommit: process.env.SOURCE_COMMIT};
+export default {url: process.env.SITE_URL, repositoryUrl: process.env.REPOSITORY_URL};
