@@ -23,6 +23,7 @@ body {
 main {
     margin-inline: auto;
     max-width: min(1000px, 100%);
+    flex-grow: 1;
 }
 footer {
     text-align: center;
