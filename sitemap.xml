@@ -6,11 +6,51 @@
         </url>
     
         <url>
+            <loc>/game/persona-5-royal/</loc>
+        </url>
+    
+        <url>
+            <loc>/game/terraria/</loc>
+        </url>
+    
+        <url>
             <loc>/</loc>
         </url>
     
         <url>
             <loc>/tag/platformer/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/difficult/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/pixelart/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/2d/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/jrpg/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/story/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/anime/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/sandbox/</loc>
+        </url>
+    
+        <url>
+            <loc>/tag/survival/</loc>
         </url>
     
 </urlset>
