@@ -50,7 +50,9 @@ body {
 }
 main {
     margin-inline: auto;
-    max-width: min(1000px, 100%);
+    max-width: 1000px;
+}
+.main-container {
     flex-grow: 1;
 }
 footer {
@@ -66,9 +68,6 @@ nav {
 header {
     border-bottom: 1px solid var(--text);
 }
-.nav-section {
-    height: 100%;
-}
 .nav-item {
     padding-inline: 1rem;
     height: 100%;
@@ -80,7 +79,7 @@ header {
 }
 
 .nav-item:hover {
-    background-color: color-mix(in lab, transparent, var(--accent) 20%);
+    background-color: color-mix(in oklab, transparent, var(--accent) 20%);
 }
 .nav-active,.nav-active:hover {
     background-color: var(--accent);
