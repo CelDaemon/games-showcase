@@ -45,7 +45,7 @@ jobs:
           path: 'live'
       - run: git config --global user.name 'github-actions[bot]' && git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
         name: Setup Git User
-      - run: find . -type f -not -path './.git/*' -delete -print
+      - run: git rm -r *
         name: Remove Old Files
         working-directory: 'live'
       - uses: actions/download-artifact@v4
