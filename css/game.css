@@ -101,7 +101,3 @@
     object-fit: cover;
     vertical-align: top;
 }
-.game-image::before {
-    display: inline;
-    
-}
