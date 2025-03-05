@@ -91,6 +91,7 @@
     overflow-x: scroll;
     overflow-y: hidden; 
     scroll-snap-type: x mandatory;
+    scroll-snap-stop: normal;
 }
 .game-image {
     max-width: 90%;
