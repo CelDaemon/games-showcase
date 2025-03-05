@@ -83,26 +83,15 @@ tags: game
   </section>
 {% endif %}
 
-{% macro icon(name) %}
-<svg class="icon">
-  <use href="/icons.svg#{{ name }}"></use>
-</svg>
-{% endmacro %}
-
 <section class="card">
   <h2>System Requirements</h2>
   <div>
-    {% if game.system_requirements.operating_system.windows %}
-      {{ icon('windows') }}
-    {% endif %}
-    {% if game.system_requirements.operating_system.linux %}
-      {{ icon('linux') }}
-    {% endif %}
-    {% if game.system_requirements.operating_system.mac %}
-      {{ icon('mac') }}
-    {% endif %}
-    {% if game.system_requirements.operating_system.proton %}
-      {{ icon('proton') }}
-    {% endif %}
+    {% for platform in ["windows", "linux", "mac", "proton"] %}
+      {% if game.system_requirements.operating_system[platform] %}
+        <svg class="icon">
+          <use href="/icons.svg#{{ platform }}"></use>
+        </svg>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
