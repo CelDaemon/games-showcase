@@ -95,9 +95,9 @@
 }
 .game-image {
     height: 250px;
+    width: auto;
     scroll-snap-align: center;
     display: inline-block;
-    aspect-ratio: 16 / 9;
     object-fit: cover;
     vertical-align: top;
 }
