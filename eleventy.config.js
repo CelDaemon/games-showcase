@@ -47,6 +47,6 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addTransform("prettier", (content, output) => {
 		const extension = extname(output);
 		if(extension !== ".html") return content;
-		return format(content, { parser: 'html' });
+		return format(content, { parser: 'html', htmlWhitespaceSensitivity: 'ignore' });
 	})
 }
