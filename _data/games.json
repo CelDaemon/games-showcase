@@ -120,7 +120,19 @@
         "images": [
             {
                 "main": "terraria/house.jpg",
-                "alt": "A house in "
+                "alt": "The player standing in a house"
+            },
+            {
+                "main": "terraria/fleshwall.jpg",
+                "alt": "The player fighting the Wall of Flesh"
+            },
+            {
+                "main": "terraria/monsters.jpg",
+                "alt": "A player fighting monsters in a cave"
+            },
+            {
+                "main": "terraria/cloud.jpg",
+                "alt": "A player fishing on a raining cloud"
             }
         ],
         "system_requirements": {
