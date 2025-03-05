@@ -1,5 +1,6 @@
 import slugify from "@sindresorhus/slugify";
-import {extname} from 'path';
+import {eleventyImageTransformPlugin} from "@11ty/eleventy-img"
+import {extname, basename, relative} from 'path';
 import {format} from 'prettier';
 function lens(object, path) {
 	return path.split(".").reduce((object, key) => object && object[key] ? object[key] : null, object);
@@ -30,7 +31,6 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("css/*.css");
-	eleventyConfig.addPassthroughCopy("img/**/*.{png,jpg,webp}");
 	eleventyConfig.addShortcode("warn", (...args) => eleventyConfig.logger.warn(...args));
 	eleventyConfig.addFilter("forceCapitalize", value => {
 		value ??= '';
@@ -48,5 +48,14 @@ export default async function(eleventyConfig) {
 		const extension = extname(output);
 		if(extension !== ".html") return content;
 		return format(content, { parser: 'html', htmlWhitespaceSensitivity: 'ignore' });
-	})
+	});
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin,
+		{
+			filenameFormat: (id, src, width, format, options) => {
+				const relativeSrc = relative('img', src);
+				const genericSrc = relativeSrc.substring(0, relativeSrc.lastIndexOf('.'));
+				return `${genericSrc}-${width}.${format}`;
+			}
+		}
+	);
 }

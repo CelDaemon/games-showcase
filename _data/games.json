@@ -15,24 +15,8 @@
         "players": "singleplayer",
         "images": [
             {
-                "main": "celeste/mountain.webp",
-"thumbnail": "celeste/mountain-thumbnail.webp",
+                "main": "celeste/mountain.png",
                 "alt": "Madeline asking about the mountain trail"
-            },
-            {
-                "main": "celeste/platforming.webp",
-"thumbnail": "celeste/platforming-thumbnail.webp",
-                "alt": "Madeline platforming in the mountain"
-            },
-            {
-                "main": "celeste/dash.webp",
-"thumbnail": "celeste/dash-thumbnail.webp",
-                "alt": "Madeline dashing"
-            },
-            {
-                "main": "celeste/core.webp",
-"thumbnail": "celeste/core-thumbnail.webp",
-                "alt": "Madeline facing fireballs in the core"
             }
         ],
         "system_requirements": {
@@ -69,26 +53,7 @@
         "developer": "ATLUS",
         "players": "singleplayer",
         "images": [
-            {
-                "main": "p5r/class.webp",
-"thumbnail": "p5r/class-thumbnail.webp",
-                "alt": "Joker participating in class"
-            },
-            {
-                "main": "p5r/cast.webp",
-"thumbnail": "p5r/cast-thumbnail.webp",
-                "alt": "Cutscene showing the main cast"
-            },
-            {
-                "main": "p5r/dialog.webp",
-"thumbnail": "p5r/dialog-thumbnail.webp",
-                "alt": "Joker talking with Kasumi"
-            },
-            {
-                "main": "p5r/kamoshida.webp",
-"thumbnail": "p5r/kamoshida-thumbnail.webp",
-                "alt": "The player confronting Kamoshida"
-            }
+            
         ],
         "system_requirements": {
             "operating_system": {
@@ -126,26 +91,7 @@
         "developer": "Re-Logic",
         "players": "multiplayer",
         "images": [
-            {
-                "main": "terraria/house.webp",
-"thumbnail": "terraria/house-thumbnail.webp",
-                "alt": "The player standing in a house"
-            },
-            {
-                "main": "terraria/fleshwall.webp",
-"thumbnail": "terraria/fleshwall-thumbnail.webp",
-                "alt": "The player fighting the Wall of Flesh"
-            },
-            {
-                "main": "terraria/monsters.webp",
-"thumbnail": "terraria/monsters-thumbnail.webp",
-                "alt": "A player fighting monsters in a cave"
-            },
-            {
-                "main": "terraria/cloud.webp",
-"thumbnail": "terraria/cloud-thumbnail.webp",
-                "alt": "A player fishing on a raining cloud"
-            }
+            
         ],
         "system_requirements": {
             "operating_system": {
