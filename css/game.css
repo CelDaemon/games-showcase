@@ -94,8 +94,7 @@
     scroll-snap-stop: normal;
 }
 .game-image {
-    max-width: 90%;
-    max-height: 250px;
+    height: 250px;
     scroll-snap-align: center;
     display: inline-block;
     aspect-ratio: 16 / 9;
