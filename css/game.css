@@ -84,3 +84,16 @@
 .game-name {
     font-size: 2rem;
 }
+.image-container {
+    margin: 1.5rem;
+    height: 250px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden; 
+}
+.game-image {
+    height: 100%;
+    display: inline-block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}

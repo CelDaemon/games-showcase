@@ -72,6 +72,17 @@ tags: game
   </div>
 </section>
 
+{% if game.images | length %}
+  <section class="image-container">
+    {% for image in game.images %}
+      {% if not image.alt %}
+        {% warn "No alt field for image: " + image.main %}
+      {% endif %}
+      <img class="game-image" alt="{{ image.alt }}" src="/img/{{ image.main }}">
+    {% endfor %}
+  </section>
+{% endif %}
+
 {% macro icon(name) %}
 <svg class="icon">
   <use href="/icons.svg#{{ name }}"></use>

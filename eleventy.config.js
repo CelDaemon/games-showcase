@@ -1,5 +1,6 @@
 import slugify from "@sindresorhus/slugify";
-import process from "process";
+import {extname} from 'path';
+import {format} from 'prettier';
 function lens(object, path) {
 	return path.split(".").reduce((object, key) => object && object[key] ? object[key] : null, object);
 }
@@ -29,6 +30,8 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("css/*.css");
+	eleventyConfig.addPassthroughCopy("img/**/*.{png,jpg}");
+	eleventyConfig.addShortcode("warn", (...args) => eleventyConfig.logger.warn(...args));
 	eleventyConfig.addFilter("forceCapitalize", value => {
 		value ??= '';
 		return value.charAt(0).toUpperCase() + value.slice(1);
@@ -41,4 +44,9 @@ export default async function(eleventyConfig) {
 		if(typeof tag !== "string") throw new Error("Could not generate tag url for invalid tag");
 		return `/tag/${slugify(tag, {decamelize: false})}/`;
 	}));
+	eleventyConfig.addTransform("prettier", (content, output) => {
+		const extension = extname(output);
+		if(extension !== ".html") return content;
+		return format(content, { parser: 'html' });
+	})
 }

@@ -2,21 +2,48 @@
     {
         "name": "Celeste",
         "description": "Help Madeline survive her inner demons on her journey to the top of Celeste Mountain, in this super-tight platformer from the creators of TowerFall. Brave hundreds of hand-crafted challenges, uncover devious secrets, and piece together the mystery of the mountain.",
-        "tags": ["platformer", "difficult", "pixelart", "2D"],
+        "tags": [
+            "platformer",
+            "difficult",
+            "pixelart",
+            "2D"
+        ],
         "rating": 3.4,
         "release": "25 Jan, 2018",
         "genre": "platformer",
         "developer": "Extremely OK Games",
         "players": "singleplayer",
+        "images": [
+            {
+                "main": "celeste/mountain.jpg",
+                "alt": "Madeline asking about the mountain trail"
+            },
+            {
+                "main": "celeste/platforming.jpg",
+                "alt": "Madeline platforming in the mountain"
+            },
+            {
+                "main": "celeste/dash.jpg",
+                "alt": "Madeline dashing"
+            },
+            {
+                "main": "celeste/core.jpg",
+                "alt": "Madeline facing fireballs in the core"
+            }
+        ],
         "system_requirements": {
             "operating_system": {
                 "windows": true,
                 "mac": true,
                 "linux": true
             },
-            "processor": ["Intel Core i3 M380"],
+            "processor": [
+                "Intel Core i3 M380"
+            ],
             "memory": "2 GB",
-            "graphics_unit": ["Intel HD 4000"],
+            "graphics_unit": [
+                "Intel HD 4000"
+            ],
             "graphics": {
                 "directx": "Version 10",
                 "opengl": "3.0+ (2.1 with ARB extensions acceptable)"
@@ -27,12 +54,34 @@
     {
         "name": "Persona 5 Royal",
         "description": " Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!",
-        "tags": ["JRPG", "story", "anime"],
+        "tags": [
+            "JRPG",
+            "story",
+            "anime"
+        ],
         "rating": 4.5,
         "release": "21 Oct, 2022",
         "genre": "RPG",
         "developer": "ATLUS",
         "players": "singleplayer",
+        "images": [
+            {
+                "main": "p5r/class.jpg",
+                "alt": "Joker participating in class"
+            },
+            {
+                "main": "p5r/cast.jpg",
+                "alt": "Cutscene showing the main cast"
+            },
+            {
+                "main": "p5r/dialog.jpg",
+                "alt": "Joker talking with Kasumi"
+            },
+            {
+                "main": "p5r/kamoshida.jpg",
+                "alt": "The player confronting Kamoshida"
+            }
+        ],
         "system_requirements": {
             "operating_system": {
                 "windows": true,
@@ -40,9 +89,15 @@
                 "linux": false,
                 "proton": true
             },
-            "processor": ["Intel Core i7-4790, 3.4 GHz", "AMD Ryzen 5 1500X, 3.5 GHz"],
+            "processor": [
+                "Intel Core i7-4790, 3.4 GHz",
+                "AMD Ryzen 5 1500X, 3.5 GHz"
+            ],
             "memory": "8 GB",
-            "graphics_unit": ["Nvidia GeForce GTX 650 Ti, 2 GB", "AMD Radeon R7 360, 2 GB"],
+            "graphics_unit": [
+                "Nvidia GeForce GTX 650 Ti, 2 GB",
+                "AMD Radeon R7 360, 2 GB"
+            ],
             "graphics": {
                 "directx": "Version 11"
             },
@@ -52,21 +107,35 @@
     {
         "name": "Terraria",
         "description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game.",
-        "tags": ["sandbox", "survival", "2D"],
+        "tags": [
+            "sandbox",
+            "survival",
+            "2D"
+        ],
         "rating": 5,
         "release": "16 May, 2011",
         "genre": "RPG",
         "developer": "Re-Logic",
         "players": "multiplayer",
+        "images": [
+            {
+                "main": "terraria/house.jpg",
+                "alt": "A house in "
+            }
+        ],
         "system_requirements": {
             "operating_system": {
                 "windows": true,
                 "mac": true,
                 "linux": true
             },
-            "processor": ["2.0 Ghz"],
+            "processor": [
+                "2.0 Ghz"
+            ],
             "memory": "2.5 GB",
-            "graphics_unit": ["128mb Video Memory, capable of Shader Model 2.0+"],
+            "graphics_unit": [
+                "128mb Video Memory, capable of Shader Model 2.0+"
+            ],
             "graphics": {
                 "directx": "Version 9"
             },
