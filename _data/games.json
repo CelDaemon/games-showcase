@@ -16,22 +16,22 @@
         "images": [
             {
                 "main": "celeste/mountain.webp",
-                "thumbnail": "celeste/mountain-thumbnail.webp",
+"thumbnail": "celeste/mountain-thumbnail.webp",
                 "alt": "Madeline asking about the mountain trail"
             },
             {
                 "main": "celeste/platforming.webp",
-                "thumbnail": "celeste/platforming-thumbnail.webp",
+"thumbnail": "celeste/platforming-thumbnail.webp",
                 "alt": "Madeline platforming in the mountain"
             },
             {
                 "main": "celeste/dash.webp",
-                "thumbnail": "celeste/dash-thumbnail.webp",
+"thumbnail": "celeste/dash-thumbnail.webp",
                 "alt": "Madeline dashing"
             },
             {
                 "main": "celeste/core.webp",
-                "thumbnail": "celeste/core-thumbnail.webp",
+"thumbnail": "celeste/core-thumbnail.webp",
                 "alt": "Madeline facing fireballs in the core"
             }
         ],
@@ -71,18 +71,22 @@
         "images": [
             {
                 "main": "p5r/class.webp",
+"thumbnail": "p5r/class-thumbnail.webp",
                 "alt": "Joker participating in class"
             },
             {
                 "main": "p5r/cast.webp",
+"thumbnail": "p5r/cast-thumbnail.webp",
                 "alt": "Cutscene showing the main cast"
             },
             {
                 "main": "p5r/dialog.webp",
+"thumbnail": "p5r/dialog-thumbnail.webp",
                 "alt": "Joker talking with Kasumi"
             },
             {
                 "main": "p5r/kamoshida.webp",
+"thumbnail": "p5r/kamoshida-thumbnail.webp",
                 "alt": "The player confronting Kamoshida"
             }
         ],
