@@ -86,14 +86,22 @@
 }
 .image-container {
     margin: 1.5rem;
-    height: 250px;
+    max-height: 250px;
     white-space: nowrap;
     overflow-x: scroll;
     overflow-y: hidden; 
+    scroll-snap-type: x mandatory;
 }
 .game-image {
-    height: 100%;
+    max-width: 90%;
+    max-height: 250px;
+    scroll-snap-align: center;
     display: inline-block;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    vertical-align: top;
+}
+.game-image::before {
+    display: inline;
+    
 }
