@@ -78,7 +78,7 @@ tags: game
       {% if not image.alt %}
         {% warn "No alt field for image: " + image.main %}
       {% endif %}
-      <img class="game-image" alt="{{ image.alt }}" src="/img/{{ image.main }}">
+      <img class="game-image" alt="{{ image.alt }}" src="/img/{{ image.thumbnail }}">
     {% endfor %}
   </section>
 {% endif %}

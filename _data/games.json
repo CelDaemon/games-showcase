@@ -15,19 +15,23 @@
         "players": "singleplayer",
         "images": [
             {
-                "main": "celeste/mountain.jpg",
+                "main": "celeste/mountain.webp",
+                "thumbnail": "celeste/mountain-thumbnail.webp",
                 "alt": "Madeline asking about the mountain trail"
             },
             {
-                "main": "celeste/platforming.jpg",
+                "main": "celeste/platforming.webp",
+                "thumbnail": "celeste/platforming-thumbnail.webp",
                 "alt": "Madeline platforming in the mountain"
             },
             {
-                "main": "celeste/dash.jpg",
+                "main": "celeste/dash.webp",
+                "thumbnail": "celeste/dash-thumbnail.webp",
                 "alt": "Madeline dashing"
             },
             {
-                "main": "celeste/core.jpg",
+                "main": "celeste/core.webp",
+                "thumbnail": "celeste/core-thumbnail.webp",
                 "alt": "Madeline facing fireballs in the core"
             }
         ],
@@ -66,19 +70,19 @@
         "players": "singleplayer",
         "images": [
             {
-                "main": "p5r/class.jpg",
+                "main": "p5r/class.webp",
                 "alt": "Joker participating in class"
             },
             {
-                "main": "p5r/cast.jpg",
+                "main": "p5r/cast.webp",
                 "alt": "Cutscene showing the main cast"
             },
             {
-                "main": "p5r/dialog.jpg",
+                "main": "p5r/dialog.webp",
                 "alt": "Joker talking with Kasumi"
             },
             {
-                "main": "p5r/kamoshida.jpg",
+                "main": "p5r/kamoshida.webp",
                 "alt": "The player confronting Kamoshida"
             }
         ],
@@ -119,19 +123,23 @@
         "players": "multiplayer",
         "images": [
             {
-                "main": "terraria/house.jpg",
+                "main": "terraria/house.webp",
+"thumbnail": "terraria/house-thumbnail.webp",
                 "alt": "The player standing in a house"
             },
             {
-                "main": "terraria/fleshwall.jpg",
+                "main": "terraria/fleshwall.webp",
+"thumbnail": "terraria/fleshwall-thumbnail.webp",
                 "alt": "The player fighting the Wall of Flesh"
             },
             {
-                "main": "terraria/monsters.jpg",
+                "main": "terraria/monsters.webp",
+"thumbnail": "terraria/monsters-thumbnail.webp",
                 "alt": "A player fighting monsters in a cave"
             },
             {
-                "main": "terraria/cloud.jpg",
+                "main": "terraria/cloud.webp",
+"thumbnail": "terraria/cloud-thumbnail.webp",
                 "alt": "A player fishing on a raining cloud"
             }
         ],
