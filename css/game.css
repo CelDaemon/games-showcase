@@ -94,8 +94,10 @@
     scroll-snap-stop: normal;
 }
 .game-image {
-    height: 250px;
+    max-width: 90%;
+    max-height: 250px;
     width: auto;
+    height: auto;
     scroll-snap-align: center;
     display: inline-block;
     object-fit: cover;
