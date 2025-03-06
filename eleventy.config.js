@@ -31,7 +31,6 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("css/*.css");
-	// eleventyConfig.addPassthroughCopy("img/**/*.png");
 	eleventyConfig.addShortcode("warn", (...args) => eleventyConfig.logger.warn(...args));
 	eleventyConfig.addFilter("forceCapitalize", value => {
 		value ??= '';
@@ -55,7 +54,8 @@ export default async function(eleventyConfig) {
 			filenameFormat: (id, src, width, format, options) => {
 				const relativeSrc = relative('img', src);
 				const genericSrc = relativeSrc.substring(0, relativeSrc.lastIndexOf('.'));
-				return `${genericSrc}-${width}.${format}`;
+				if(width) return `${genericSrc}-${width}.${format}`;
+				return `${genericSrc}.${format}`;
 			}
 		}
 	);
