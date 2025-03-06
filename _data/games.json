@@ -15,19 +15,19 @@
         "players": "singleplayer",
         "images": [
             {
-                "main": "celeste/mountain.png",
+                "src": "celeste/mountain.png",
                 "alt": "Madeline asking about the mountain trail"
             },
             {
-                "main": "celeste/platforming.png",
+                "src": "celeste/platforming.png",
                 "alt": "The player platforming in the mountains"
             },
             {
-                "main": "celeste/dash.png",
+                "src": "celeste/dash.png",
                 "alt": "The player dashing above spikes"
             },
             {
-                "main": "celeste/cutscene.png",
+                "src": "celeste/cutscene.png",
                 "alt": "Madeline having a panic attack"
             }
         ],
@@ -103,7 +103,22 @@
         "developer": "Re-Logic",
         "players": "multiplayer",
         "images": [
-            
+            {
+                "src": "terraria/house.png",
+                "alt": "The player standing in a house"
+            },
+            {
+                "src": "terraria/fleshwall.png",
+                "alt": "A player fighting the Wall of Flesh"
+            },
+            {
+                "src": "terraria/monsters.png",
+                "alt": "A player fighting monsters in a cave"
+            },
+            {
+                "src": "terraria/fishing.png",
+                "alt": "A player fishing in a cloud"
+            }
         ],
         "system_requirements": {
             "operating_system": {

@@ -54,8 +54,8 @@ export default async function(eleventyConfig) {
 			filenameFormat: (id, src, width, format, options) => {
 				const relativeSrc = relative('img', src);
 				const genericSrc = relativeSrc.substring(0, relativeSrc.lastIndexOf('.'));
-				if(width) return `${genericSrc}-${width}.${format}`;
-				return `${genericSrc}.${format}`;
+				if(width) return `${genericSrc}-${id}-${width}.${format}`;
+				return `${genericSrc}-${id}.${format}`;
 			}
 		}
 	);
