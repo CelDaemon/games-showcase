@@ -21,6 +21,14 @@
             {
                 "main": "celeste/platforming.png",
                 "alt": "The player platforming in the mountains"
+            },
+            {
+                "main": "celeste/dash.png",
+                "alt": "The player dashing above spikes"
+            },
+            {
+                "main": "celeste/cutscene.png",
+                "alt": "Madeline having a panic attack"
             }
         ],
         "system_requirements": {
