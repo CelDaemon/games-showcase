@@ -13,24 +13,12 @@
         "genre": "platformer",
         "developer": "Extremely OK Games",
         "players": "singleplayer",
-        "images": [
-            {
-                "src": "celeste/mountain.png",
-                "alt": "Madeline asking about the mountain trail"
-            },
-            {
-                "src": "celeste/platforming.png",
-                "alt": "The player platforming in the mountains"
-            },
-            {
-                "src": "celeste/dash.png",
-                "alt": "The player dashing above spikes"
-            },
-            {
-                "src": "celeste/cutscene.png",
-                "alt": "Madeline having a panic attack"
-            }
-        ],
+        "images": {
+            "celeste/mountain.png": "Madeline asking about the mountain trail",
+            "celeste/platforming.png": "The player platforming in the mountains",
+            "celeste/dash.png": "The player dashing above spikes",
+            "celeste/cutscene.png": "Madeline having a panic attack"
+        },
         "system_requirements": {
             "operating_system": {
                 "windows": true,
@@ -102,24 +90,12 @@
         "genre": "RPG",
         "developer": "Re-Logic",
         "players": "multiplayer",
-        "images": [
-            {
-                "src": "terraria/house.png",
-                "alt": "The player standing in a house"
-            },
-            {
-                "src": "terraria/fleshwall.png",
-                "alt": "A player fighting the Wall of Flesh"
-            },
-            {
-                "src": "terraria/monsters.png",
-                "alt": "A player fighting monsters in a cave"
-            },
-            {
-                "src": "terraria/fishing.png",
-                "alt": "A player fishing in a cloud"
-            }
-        ],
+        "images": {
+            "terraria/house.png": "The player standing in a house",
+            "terraria/fleshwall.png": "A player fighting the Wall of Flesh",
+            "terraria/monsters.png": "A player fighting monsters in a cave",
+            "terraria/fishing.png": "A player fishing in a cloud"
+        },
         "system_requirements": {
             "operating_system": {
                 "windows": true,

@@ -74,11 +74,8 @@ tags: game
 
 {% if game.images | length %}
   <section class="image-container">
-    {% for image in game.images %}
-      {% if not image.alt %}
-        {% warn "No alt field for image: " + image.main %}
-      {% endif %}
-      <img class="game-image" alt="{{ image.alt }}" src="/img/{{ image.src }}" eleventy:widths="auto,600" sizes="auto">
+    {% for src, alt in game.images %}
+      <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,600" sizes="auto">
     {% endfor %}
   </section>
 {% endif %}

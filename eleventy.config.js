@@ -31,7 +31,6 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("css/*.css");
-	eleventyConfig.addShortcode("warn", (...args) => eleventyConfig.logger.warn(...args));
 	eleventyConfig.addFilter("forceCapitalize", value => {
 		value ??= '';
 		return value.charAt(0).toUpperCase() + value.slice(1);
