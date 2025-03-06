@@ -17,6 +17,10 @@
             {
                 "main": "celeste/mountain.png",
                 "alt": "Madeline asking about the mountain trail"
+            },
+            {
+                "main": "celeste/platforming.png",
+                "alt": "The player platforming in the mountains"
             }
         ],
         "system_requirements": {
