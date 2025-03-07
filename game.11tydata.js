@@ -8,7 +8,7 @@ export default function(env) {
                 if(!data.game.images) return;
                 const src = Object.keys(data.game.images)[0];
                 if(src === undefined) return;
-                return await Image(join(env.eleventy.directories.input, 'img', src), {
+                return (await Image(join(env.eleventy.directories.input, 'img', src), {
                     transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
                     formats: ['png'],
                     widths: [1920],
@@ -21,7 +21,7 @@ export default function(env) {
                         if(width) return `${genericSrc}-${id}-${width}.${format}`;
                         return `${genericSrc}-${id}.${format}`;
                     }
-                });
+                })).png[0];
                 
             }
         }

@@ -23,8 +23,13 @@ description: A site to showcase various games.
         <meta property="og:title" content="{{ title }}">
         <meta property="og:description" content="{{ description }}">
         {% if image %}
-            <meta property="og:image" content="{{ site.url }}{{ image.png[0].url }}">
+            <meta property="og:image" content="{{ site.url }}{{ image.url }}">
+
+            <meta property="twitter:image" content="{{ site.url }}{{ image.url }}">
+            <meta property="twitter:card" content="summary_large_image">
         {% endif %}
+
+        
     </head>
     <body>
         {% include "header.njk" %}
