@@ -18,6 +18,7 @@ jobs:
         name: Build Files
         env:
           SITE_URL: '${{ vars.SITE_URL }}'
+          SITE_INSECURE_URL: '${{ vars.SITE_INSECURE_URL }}'
           REPOSITORY_URL: '${{ github.server_url }}/${{ github.repository }}'
           NODE_ENV: production
       - uses: actions/upload-pages-artifact@v3
