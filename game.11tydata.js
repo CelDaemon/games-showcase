@@ -11,7 +11,7 @@ export default function(env) {
                 return (await Image(join(env.eleventy.directories.input, 'img', src), {
                     transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
                     formats: ['png'],
-                    widths: [1920],
+                    widths: [1200],
                     failOnError: true,
                     outputDir: join(env.eleventy.directories.output, 'img'),
                     urlPath: "/img/",

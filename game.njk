@@ -71,7 +71,7 @@ tags: game
   </div>
 </section>
 
-{% if game.images | length %}
+{% if game.images %}
   <section class="image-container">
     {% for src, alt in game.images %}
       <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,720" sizes="auto">
