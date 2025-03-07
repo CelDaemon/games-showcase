@@ -1,7 +1,7 @@
 import slugify from "@sindresorhus/slugify";
 import {eleventyImageTransformPlugin} from "@11ty/eleventy-img"
 import Image from "@11ty/eleventy-img"
-import {extname, relative, join} from 'path';
+import {extname, relative, join, parse} from 'path';
 import {format} from 'prettier';
 function lens(object, path) {
 	return path.split(".").reduce((object, key) => object && object[key] ? object[key] : null, object);
@@ -28,6 +28,11 @@ function memoize(callback) {
 }
 
 export default async function(eleventyConfig) {
+	function filenameFormat(id, src, width, format) {
+		const srcParsed = parse(src);
+		const outputName = width ? `${srcParsed.name}-${id}-${width}.${format}` : `${srcParsed.name}-${id}.${format}`;
+		return join(relative(join(eleventyConfig.directories.input, 'img'), srcParsed.dir), outputName);
+	}
 	eleventyConfig.addFilter("contains", (object, value, key = "") => lens(object, key)?.includes(value) ?? false);
 	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
@@ -37,7 +42,8 @@ export default async function(eleventyConfig) {
 		return value.charAt(0).toUpperCase() + value.slice(1);
 	});
 	eleventyConfig.addFilter("keys", obj => !obj ? null : Object.keys(obj));
-	eleventyConfig.addFilter("embedImage", async src => {
+	eleventyConfig.addAsyncFilter("embedImage", async src => {
+		if(!src) throw new Error("Image src is invalid");
 		return (await Image(join(eleventyConfig.directories.input, 'img', src), {
 			transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
 			formats: ['jpeg'],
@@ -45,12 +51,7 @@ export default async function(eleventyConfig) {
 			failOnError: true,
 			outputDir: join(eleventyConfig.directories.output, 'img'),
 			urlPath: "/img/",
-			filenameFormat: (id, src, width, format, options) => {
-				const relativeSrc = relative('img', src);
-				const genericSrc = relativeSrc.substring(0, relativeSrc.lastIndexOf('.'));
-				if(width) return `${genericSrc}-${id}-${width}.${format}`;
-				return `${genericSrc}-${id}.${format}`;
-			}
+			filenameFormat
 		})).jpeg[0]
 	});
 	eleventyConfig.addFilter("gameUrl", memoize(game => {
@@ -68,12 +69,7 @@ export default async function(eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin,
 		{
-			filenameFormat: (id, src, width, format, options) => {
-				const relativeSrc = relative('img', src);
-				const genericSrc = relativeSrc.substring(0, relativeSrc.lastIndexOf('.'));
-				if(width) return `${genericSrc}-${id}-${width}.${format}`;
-				return `${genericSrc}-${id}.${format}`;
-			}
+			filenameFormat
 		}
 	);
 }

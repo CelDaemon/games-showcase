@@ -14,10 +14,10 @@
         "developer": "Extremely OK Games",
         "players": "singleplayer",
         "images": {
-            "celeste/mountain.png": "Madeline asking about the mountain trail",
-            "celeste/platforming.png": "The player platforming in the mountains",
-            "celeste/dash.png": "The player dashing above spikes",
-            "celeste/cutscene.png": "Madeline having a panic attack"
+            "/celeste/mountain.png": "Madeline asking about the mountain trail",
+            "/celeste/platforming.png": "The player platforming in the mountains",
+            "/celeste/dash.png": "The player dashing above spikes",
+            "/celeste/cutscene.png": "Madeline having a panic attack"
         },
         "system_requirements": {
             "operating_system": {
@@ -91,10 +91,10 @@
         "developer": "Re-Logic",
         "players": "multiplayer",
         "images": {
-            "terraria/house.png": "The player standing in a house",
-            "terraria/fleshwall.png": "A player fighting the Wall of Flesh",
-            "terraria/monsters.png": "A player fighting monsters in a cave",
-            "terraria/fishing.png": "A player fishing in a cloud"
+            "/terraria/house.png": "The player standing in a house",
+            "/terraria/fleshwall.png": "A player fighting the Wall of Flesh",
+            "/terraria/monsters.png": "A player fighting monsters in a cave",
+            "/terraria/fishing.png": "A player fishing in a cloud"
         },
         "system_requirements": {
             "operating_system": {
