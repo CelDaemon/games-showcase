@@ -41,7 +41,7 @@ export default async function(eleventyConfig) {
 		return (await Image(join(eleventyConfig.directories.input, 'img', src), {
 			transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
 			formats: ['jpeg'],
-			widths: [1200],
+			widths: [1920],
 			failOnError: true,
 			outputDir: join(eleventyConfig.directories.output, 'img'),
 			urlPath: "/img/",
