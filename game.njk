@@ -34,7 +34,7 @@ tags: game
           {% set fraction = i - rating %}
           
           {% if rating >= i %}
-            <span class="material-symbols-rounded icon rating-icon" filled>star_rate</span>
+            <span class="material-symbols-rounded icon rating-icon" data-filled>star_rate</span>
           {% elif (fraction > 0) and (fraction < 1) %}
             <span class="material-symbols-rounded icon rating-icon">star_rate_half</span>  
           {% else %}
@@ -48,7 +48,7 @@ tags: game
       Players
       <span class="meta-value">
         {{ game.players | capitalize }}
-        <span class="material-symbols-rounded icon" filled>
+        <span class="material-symbols-rounded icon" data-filled>
           {% if game.players === 'singleplayer' %}
             person
           {% elif game.players === 'multiplayer' %}
@@ -73,11 +73,11 @@ tags: game
 </section>
 
 {% if game.images | length %}
-  <section class="image-container">
+  <div class="image-container">
     {% for src, alt in game.images %}
       <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,720" sizes="auto">
     {% endfor %}
-  </section>
+  </div>
 {% endif %}
 
 <section class="card">

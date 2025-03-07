@@ -61,7 +61,7 @@
     user-select: none;
     overflow: hidden;
     margin-inline: 0.2rem;
-    &[filled] {
+    &[data-filled] {
         --filled: 1;
     }
 }
