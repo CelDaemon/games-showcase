@@ -19,7 +19,8 @@ description: A site to showcase various games.
         {% if style %}
             <link rel="stylesheet" href="{{ style }}">
         {% endif %}
-
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
         <meta property="og:title" content="{{ title }}">
         <meta property="og:description" content="{{ description }}">
         
