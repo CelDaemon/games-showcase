@@ -74,7 +74,7 @@ tags: game
 {% if game.images | length %}
   <section class="image-container">
     {% for src, alt in game.images %}
-      <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,600" sizes="auto">
+      <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,720" sizes="auto">
     {% endfor %}
   </section>
 {% endif %}
