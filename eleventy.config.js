@@ -1,6 +1,7 @@
 import slugify from "@sindresorhus/slugify";
 import {eleventyImageTransformPlugin} from "@11ty/eleventy-img"
-import {extname, basename, relative} from 'path';
+import Image from "@11ty/eleventy-img"
+import {extname, relative, join} from 'path';
 import {format} from 'prettier';
 function lens(object, path) {
 	return path.split(".").reduce((object, key) => object && object[key] ? object[key] : null, object);
@@ -34,6 +35,23 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addFilter("forceCapitalize", value => {
 		value ??= '';
 		return value.charAt(0).toUpperCase() + value.slice(1);
+	});
+	eleventyConfig.addFilter("keys", obj => !obj ? null : Object.keys(obj));
+	eleventyConfig.addFilter("embedImage", async src => {
+		return (await Image(join(eleventyConfig.directories.input, 'img', src), {
+			transformOnRequest: process.env.ELEVENTY_RUN_MODE === "serve",
+			formats: ['jpeg'],
+			widths: [1200],
+			failOnError: true,
+			outputDir: join(eleventyConfig.directories.output, 'img'),
+			urlPath: "/img/",
+			filenameFormat: (id, src, width, format, options) => {
+				const relativeSrc = relative('img', src);
+				const genericSrc = relativeSrc.substring(0, relativeSrc.lastIndexOf('.'));
+				if(width) return `${genericSrc}-${id}-${width}.${format}`;
+				return `${genericSrc}-${id}.${format}`;
+			}
+		})).jpeg[0]
 	});
 	eleventyConfig.addFilter("gameUrl", memoize(game => {
 		if(!game || typeof game.name !== "string") throw new Error("Could not generate game url for invalid game");

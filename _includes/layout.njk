@@ -22,8 +22,10 @@ description: A site to showcase various games.
 
         <meta property="og:title" content="{{ title }}">
         <meta property="og:description" content="{{ description }}">
+        
         {% if image %}
-            <meta property="og:image" content="{{ site.url }}{{ image.url }}">
+            {% set imageData = image | embedImage %}
+            <meta property="og:image" content="{{ site.url }}{{ imageData.url }}">
 
             <meta property="twitter:image" content="{{ site.url }}{{ image.url }}">
             <meta property="twitter:card" content="summary_large_image">

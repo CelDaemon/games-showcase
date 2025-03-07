@@ -9,6 +9,7 @@ permalink: "{{ game | gameUrl }}"
 eleventyComputed:
   title: "{{ game.name }}"
   description: "{{ game.description }}"
+  image: "{{ game.images | keys | first }}"
 style: "/css/game.css"
 tags: game
 ---
@@ -71,7 +72,7 @@ tags: game
   </div>
 </section>
 
-{% if game.images %}
+{% if game.images | length %}
   <section class="image-container">
     {% for src, alt in game.images %}
       <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,720" sizes="auto">
