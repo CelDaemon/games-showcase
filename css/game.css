@@ -73,13 +73,20 @@
     margin-top: 1.5rem;
 }
 .tag {
-    background-color: var(--accent);
+    
     padding: 0.2rem 1rem;
     border-radius: 15px;
-    color: var(--dark-text);
+    
     margin: 0.2rem;
     display: inline-block;
     text-decoration: unset;
+}
+.outline-tag {
+    border: solid 1px var(--text);
+}
+.filled-tag {
+    background-color: var(--accent);
+    color: var(--dark-text);
 }
 .game-name {
     font-size: 2rem;
@@ -102,4 +109,27 @@
     display: inline-block;
     object-fit: cover;
     vertical-align: top;
+}
+
+.column-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.column-card {
+    display: inline-block;
+    flex-grow: 1;
+    /* flex-basis: 1; */
+}
+
+.platform-row {
+    border-bottom: 1px color-mix(in oklab, transparent, var(--text) 40%) solid;
+    padding-block: 0.5rem;
+    margin-block: 0.5rem;
+    min-height: 50px;
+    * {
+        vertical-align: middle;
+    }
 }
