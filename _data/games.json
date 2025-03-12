@@ -21,13 +21,13 @@
         },
         "system_requirements": {
             "operating_system": {
-                "windows": true,
-                "mac": true,
+                "windows": "7",
+                "mac": "10",
                 "linux": true
             },
-            "processor": [
-                "Intel Core i3 M380"
-            ],
+            "processor": {
+                "intel": "Core i3 M380"
+            },
             "memory": "2 GB",
             "graphics_unit": [
                 "Intel HD 4000"
@@ -57,15 +57,13 @@
         ],
         "system_requirements": {
             "operating_system": {
-                "windows": true,
-                "mac": false,
-                "linux": false,
-                "proton": true
+                "windows": "10",
+                "proton": "7.0"
             },
-            "processor": [
-                "Intel Core i7-4790, 3.4 GHz",
-                "AMD Ryzen 5 1500X, 3.5 GHz"
-            ],
+            "processor": {
+                "intel": "Core i7-4790",
+                "amd": "Ryzen 5 1500X"
+            },
             "memory": "8 GB",
             "graphics_unit": [
                 "Nvidia GeForce GTX 650 Ti, 2 GB",
@@ -98,17 +96,19 @@
         },
         "system_requirements": {
             "operating_system": {
-                "windows": true,
-                "mac": true,
+                "windows": "7",
+                "mac": "10",
                 "linux": true
             },
-            "processor": [
-                "2.0 Ghz"
-            ],
+            "processor": {
+                "intel": "Pentium 4",
+                "amd": "Athlon 64 X2"
+            },
             "memory": "2.5 GB",
-            "graphics_unit": [
-                "128mb Video Memory, capable of Shader Model 2.0+"
-            ],
+            "graphics_unit": {
+                "nvidia": "GTX 970",
+                "amd": "Radeon HD 4580"
+            },
             "graphics": {
                 "directx": "Version 9"
             },

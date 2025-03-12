@@ -21,7 +21,7 @@ tags: game
     </div>
     <div class="tags">
       {% for tag in game.tags %}
-        <a href="{{ tag | tagUrl }}" class="tag">{{ tag | forceCapitalize }}</a>
+        <a href="{{ tag | tagUrl }}" class="tag filled-tag">{{ tag | forceCapitalize }}</a>
       {% endfor %}
     </div>
   </div>
@@ -80,15 +80,53 @@ tags: game
   </div>
 {% endif %}
 
+{% macro vendored(vendor, detail) %}
+  {% set vendorDetail = vendors[vendor] %}
+  <span style="border-bottom: solid 2px {{ vendorDetail.color }}" title="{{ vendorDetail.name }} {{ detail }}">{{ detail }}</span>
+{% endmacro %}
+
+{% macro vendoredList(list) %}
+  {% for vendor, detail in list %}
+    {% if not loop.first %}
+    , 
+    {% endif %}
+    {{ vendored(vendor, detail) }}
+  {% endfor %}
+{% endmacro %}
+
 <section class="card">
   <h2>System Requirements</h2>
-  <div>
-    {% for platform in ["windows", "linux", "mac", "proton"] %}
-      {% if game.system_requirements.operating_system[platform] %}
-        <svg class="icon">
-          <use href="/icons.svg#{{ platform }}"></use>
-        </svg>
+  <div class="column-card-container">
+    <section class="card column-card">
+      <h3>Operating System</h3>
+      {% for platform in ["windows", "linux", "mac", "proton"] %}
+        {% if game.system_requirements.operating_system[platform] %}
+          <div class="platform-row">
+            <svg class="icon">
+              <use href="/icons.svg#{{ platform }}"></use>
+            </svg>
+            <span>{{ platform | forceCapitalize }}</span>
+            {% if game.system_requirements.operating_system[platform] !== true %}
+              <span class="tag outline-tag">{{ game.system_requirements.operating_system[platform] }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+    <section class="card column-card">
+      <h3>Hardware</h3>
+      {% if game.system_requirements.processor | length %}
+        <div class="meta-item">
+          Processor
+          <span class="meta-value">{{ vendoredList(game.system_requirements.processor) }}</span>
+        </div>
       {% endif %}
-    {% endfor %}
+      {% if game.system_requirements.graphics_unit | length %}
+        <div class="meta-item">
+          Graphics Unit
+          <span class="meta-value">{{ vendoredList(game.system_requirements.graphics_unit) }}</span>
+        </div>
+      {% endif %}
+    </section>
   </div>
 </section>
