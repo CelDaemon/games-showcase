@@ -29,9 +29,9 @@
                 "intel": "Core i3 M380"
             },
             "memory": "2 GB",
-            "graphics_unit": [
-                "Intel HD 4000"
-            ],
+            "graphics_unit": {
+                "intel": "HD 4000"
+            },
             "graphics": {
                 "directx": "Version 10",
                 "opengl": "3.0+ (2.1 with ARB extensions acceptable)"
@@ -65,10 +65,10 @@
                 "amd": "Ryzen 5 1500X"
             },
             "memory": "8 GB",
-            "graphics_unit": [
-                "Nvidia GeForce GTX 650 Ti, 2 GB",
-                "AMD Radeon R7 360, 2 GB"
-            ],
+            "graphics_unit": {
+                "nvidia": "Geforce GTX 650 Ti",
+                "amd": "Radeon R7 360"
+            },
             "graphics": {
                 "directx": "Version 11"
             },
@@ -106,7 +106,7 @@
             },
             "memory": "2.5 GB",
             "graphics_unit": {
-                "nvidia": "GTX 970",
+                "nvidia": "Geforce GTX 970",
                 "amd": "Radeon HD 4580"
             },
             "graphics": {

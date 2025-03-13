@@ -80,6 +80,21 @@ tags: game
   </div>
 {% endif %}
 
+{% set vendors = {
+    "intel": {
+        "name": "Intel",
+        "color": "#00C7FD"
+    },
+    "amd": {
+        "name": "AMD",
+        "color": "#ef0707"
+    },
+    "nvidia": {
+        "name": "NVIDIA",
+        "color": "#76B900"
+    }
+} %}
+
 {% macro vendored(vendor, detail) %}
   {% set vendorDetail = vendors[vendor] %}
   <span style="border-bottom: solid 2px {{ vendorDetail.color }}" title="{{ vendorDetail.name }} {{ detail }}">{{ detail }}</span>
@@ -99,7 +114,7 @@ tags: game
   <div class="column-card-container">
     <section class="card column-card">
       <h3>Operating System</h3>
-      {% for platform in ["windows", "linux", "mac", "proton"] %}
+      {% for platform in ["linux", "windows", "mac", "proton"] %}
         {% if game.system_requirements.operating_system[platform] %}
           <div class="platform-row">
             <svg class="icon">
@@ -125,6 +140,18 @@ tags: game
         <div class="meta-item">
           Graphics Unit
           <span class="meta-value">{{ vendoredList(game.system_requirements.graphics_unit) }}</span>
+        </div>
+      {% endif %}
+      {% if game.system_requirements.memory %}
+        <div class="meta-item">
+          Memory
+          <span class="meta-value">{{ game.system_requirements.memory }}</span>
+        </div>
+      {% endif %}
+      {% if game.system_requirements.storage %}
+        <div class="meta-item">
+          Storage
+          <span class="meta-value">{{ game.system_requirements.storage }}</span>
         </div>
       {% endif %}
     </section>
