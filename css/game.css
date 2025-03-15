@@ -37,6 +37,9 @@
     margin-block: 0.5rem;
     min-height: 50px;
     align-items: center;
+    * {
+        vertical-align: middle;
+    }
 }
 .meta-value {
     text-align: right;
@@ -117,11 +120,9 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
-
 .column-card {
     display: inline-block;
     flex-grow: 1;
-    /* flex-basis: 1; */
 }
 
 .platform-row {
@@ -132,4 +133,8 @@
     * {
         vertical-align: middle;
     }
+}
+
+.vendored-item {
+    margin-block: 0.5rem;
 }

@@ -97,14 +97,17 @@ tags: game
 
 {% macro vendored(vendor, detail) %}
   {% set vendorDetail = vendors[vendor] %}
-  <span style="border-bottom: solid 2px {{ vendorDetail.color }}" title="{{ vendorDetail.name }} {{ detail }}">{{ detail }}</span>
+  
+  <div class="vendored-item" title="{{ vendorDetail.name }} {{ detail }}">
+    <svg class="icon">
+      <use href="/icons.svg#{{ vendor }}"></use>
+    </svg>
+    {{ detail }}
+  </div>
 {% endmacro %}
 
 {% macro vendoredList(list) %}
   {% for vendor, detail in list %}
-    {% if not loop.first %}
-    , 
-    {% endif %}
     {{ vendored(vendor, detail) }}
   {% endfor %}
 {% endmacro %}
