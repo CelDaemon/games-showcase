@@ -135,6 +135,6 @@
     }
 }
 
-.vendored-item {
-    margin-block: 0.5rem;
+.vendored-item:not(:last-child) {
+    margin-bottom: 0.5rem;
 }
