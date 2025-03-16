@@ -99,7 +99,7 @@ tags: game
   {% set vendorDetail = vendors[vendor] %}
   
   <div class="vendored-item" title="{{ vendorDetail.name }} {{ detail }}">
-    <svg class="icon">
+    <svg role="img" aria-label="{{ vendorDetail.name }}" class="icon">
       <use href="/icons.svg#{{ vendor }}"></use>
     </svg>
     {{ detail }}
@@ -120,7 +120,7 @@ tags: game
       {% for platform in ["linux", "windows", "mac", "proton"] %}
         {% if game.system_requirements.operating_system[platform] %}
           <div class="platform-row">
-            <svg class="icon">
+            <svg role="img" aria-label="{{ platform }}" class="icon">
               <use href="/icons.svg#{{ platform }}"></use>
             </svg>
             <span>{{ platform | forceCapitalize }}</span>
