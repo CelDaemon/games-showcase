@@ -5,7 +5,7 @@ nav {
     height: 70px;
 }
 header {
-    border-bottom: 1px solid var(--text);
+    border-bottom: 1px solid var(--on-background);
 }
 .nav-item {
     padding-inline: 1rem;
@@ -17,15 +17,14 @@ header {
     font-size: larger;
 }
 
-.nav-item:hover {
-    background-color: color-mix(in oklab, transparent, var(--accent) 20%);
-}
-.nav-active,.nav-active:hover {
+.nav-active {
     background-color: var(--accent);
     color: var(--dark-text);
 }
 
-
+.nav-item:hover:not(.nav-active) {
+    background-color: hsl(from var(--accent) h s l / 20%);
+}
 
 @media(max-width: 700px) { 
     .nav-item:not(.game-picker) {

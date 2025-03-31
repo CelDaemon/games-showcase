@@ -112,23 +112,21 @@ tags: game
   {% endfor %}
 {% endmacro %}
 
-<section class="card">
+<section>
   <h2>System Requirements</h2>
   <div class="column-card-container">
     <section class="card column-card">
       <h3>Operating System</h3>
-      {% for platform in ["linux", "windows", "mac", "proton"] %}
-        {% if game.system_requirements.operating_system[platform] %}
-          <div class="platform-row">
-            <svg role="img" aria-label="{{ platform }}" class="icon">
+      {% for platform, version in game.system_requirements.operating_system %}
+        <div class="platform-row">
+            <svg role="img" aria-label="{{ platform | forceCapitalize }}" class="icon">
               <use href="/icons.svg#{{ platform }}"></use>
             </svg>
             <span>{{ platform | forceCapitalize }}</span>
-            {% if game.system_requirements.operating_system[platform] !== true %}
-              <span class="tag outline-tag">{{ game.system_requirements.operating_system[platform] }}</span>
+            {% if version !== true %}
+              <span class="tag outline-tag">{{ version }}</span>
             {% endif %}
           </div>
-        {% endif %}
       {% endfor %}
     </section>
     <section class="card column-card">

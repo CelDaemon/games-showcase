@@ -1,0 +1,28 @@
+:root {
+    --primary: #4039c9;
+    --secondary: #8883ef;
+    --accent: #4d45fd;
+    
+    --light-background: #fafafd;
+    --dark-background: #252429;
+
+    --on-light-background: #0a0a0e;
+    --on-dark-background: #f0f0f4;
+
+    --faint-on-light-background: hsl(from var(--on-light-background) h s calc(l + 60));
+    --faint-on-dark-background: hsl(from var(--on-dark-background) h s calc(l - 40));
+
+
+    --background: var(--light-background);
+    --on-background: var(--on-light-background);
+    --faint-on-background: var(--faint-on-light-background);
+    
+    
+
+    @media (prefers-color-scheme: dark) {
+        --background: var(--dark-background);
+        --on-background: var(--on-dark-background);
+        --faint-on-background: var(--faint-on-dark-background);
+    }
+
+}
