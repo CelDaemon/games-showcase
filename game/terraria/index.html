@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups,person,star_rate,star_rate_half&display=block"
       crossorigin=""
     />
-
+    <link rel="stylesheet" href="/css/colors.css" />
     <link rel="stylesheet" href="/css/layout.css" />
 
     <link rel="stylesheet" href="/css/game.css" />
@@ -244,21 +244,14 @@
           </picture>
         </div>
 
-        <section class="card">
+        <section>
           <h2>System Requirements</h2>
           <div class="column-card-container">
             <section class="card column-card">
               <h3>Operating System</h3>
 
               <div class="platform-row">
-                <svg role="img" aria-label="linux" class="icon">
-                  <use href="/icons.svg#linux"></use>
-                </svg>
-                <span>Linux</span>
-              </div>
-
-              <div class="platform-row">
-                <svg role="img" aria-label="windows" class="icon">
+                <svg role="img" aria-label="Windows" class="icon">
                   <use href="/icons.svg#windows"></use>
                 </svg>
                 <span>Windows</span>
@@ -267,12 +260,19 @@
               </div>
 
               <div class="platform-row">
-                <svg role="img" aria-label="mac" class="icon">
+                <svg role="img" aria-label="Mac" class="icon">
                   <use href="/icons.svg#mac"></use>
                 </svg>
                 <span>Mac</span>
 
                 <span class="tag outline-tag">10</span>
+              </div>
+
+              <div class="platform-row">
+                <svg role="img" aria-label="Linux" class="icon">
+                  <use href="/icons.svg#linux"></use>
+                </svg>
+                <span>Linux</span>
               </div>
             </section>
             <section class="card column-card">

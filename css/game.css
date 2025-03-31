@@ -11,7 +11,7 @@
     margin-block: 1rem;
     border: 2px solid transparent;
     @media(prefers-color-scheme: dark) {
-        background-color: color-mix(in oklab, transparent, var(--accent) 20%);
+        background-color: hsl(from var(--accent) h s l / 20%);
     }
     @media(prefers-color-scheme: light) {
         border-color: var(--accent);
@@ -32,7 +32,7 @@
 .meta-item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px color-mix(in oklab, transparent, var(--text) 40%) solid;
+    border-bottom: 1px var(--faint-on-background) solid;
     padding-block: 0.5rem;
     margin-block: 0.5rem;
     min-height: 50px;
@@ -85,7 +85,7 @@
     text-decoration: unset;
 }
 .outline-tag {
-    border: solid 1px var(--text);
+    border: solid 1px var(--on-background);
 }
 .filled-tag {
     background-color: var(--accent);
@@ -126,7 +126,7 @@
 }
 
 .platform-row {
-    border-bottom: 1px color-mix(in oklab, transparent, var(--text) 40%) solid;
+    border-bottom: 1px var(--faint-on-background) solid;
     padding-block: 0.5rem;
     margin-block: 0.5rem;
     min-height: 50px;

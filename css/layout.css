@@ -1,36 +1,7 @@
-:root {
-    --primary: #4039c9;
-    --secondary: #8883ef;
-    --accent: #4d45fd;
-
-    --light-text: #0a0a0e;
-    --dark-text: #f0f0f4;
-    
-    --light-background: #fafafd;
-    --dark-background: #252429; 
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --text: var(--light-text);
-        --background: var(--light-background);
-        --inverse-text: var(--dark-text);
-        --inverse-background: var(--dark-background);
-    }
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text: var(--dark-text);
-        --background: var(--dark-background);
-        --inverse-text: var(--light-text);
-        --inverse-background: var(--light-background);
-    }
-}
 
 :root {
     color-scheme: light dark;
     font-family: sans-serif;
-    color: var(--text);
 }
 * {
     box-sizing: border-box;
@@ -44,6 +15,7 @@ html, body {
 }
 body {
     background-color: var(--background);
+    color: var(--on-background);
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -66,7 +38,7 @@ nav {
     height: 70px;
 }
 header {
-    border-bottom: 1px solid var(--text);
+    border-bottom: 1px solid var(--on-background);
 }
 .nav-item {
     padding-inline: 1rem;
@@ -78,15 +50,14 @@ header {
     font-size: larger;
 }
 
-.nav-item:hover {
-    background-color: color-mix(in oklab, transparent, var(--accent) 20%);
-}
-.nav-active,.nav-active:hover {
+.nav-active {
     background-color: var(--accent);
     color: var(--dark-text);
 }
 
-
+.nav-item:hover:not(.nav-active) {
+    background-color: hsl(from var(--accent) h s l / 20%);
+}
 
 @media(max-width: 700px) { 
     .nav-item:not(.game-picker) {
