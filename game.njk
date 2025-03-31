@@ -26,7 +26,7 @@ tags: game
     </div>
   </div>
   <div class="meta">
-    <div class="meta-item">
+    <div class="list-item meta-item">
       Rating
       {% set rating = ((game.rating * 2) | round) / 2 %}
       <span class="meta-value">
@@ -44,7 +44,7 @@ tags: game
         {% endfor %}
       </span>
     </div>
-    <div class="meta-item">
+    <div class="list-item meta-item">
       Players
       <span class="meta-value">
         {{ game.players | capitalize }}
@@ -57,15 +57,15 @@ tags: game
         </span>
       </span>
     </div>
-    <div class="meta-item">
+    <div class="list-item meta-item">
       Genre
       <span class="meta-value">{{ game.genre | forceCapitalize }}</span>
     </div>
-    <div class="meta-item">
+    <div class="list-item meta-item">
       Developer
       <span class="meta-value">{{ game.developer | forceCapitalize }}</span>
     </div>
-    <div class="meta-item">
+    <div class="list-item meta-item">
       Release Date
       <span class="meta-value">{{ game.release }}</span>
     </div>
@@ -73,33 +73,27 @@ tags: game
 </section>
 
 {% if game.images | length %}
-  <div class="image-container">
-    {% for src, alt in game.images %}
-      <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,720" sizes="auto">
-    {% endfor %}
-  </div>
+  <section>
+    <h2>Screenshots</h2>
+    <div class="image-container">
+      {% for src, alt in game.images %}
+        <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,720" sizes="auto">
+      {% endfor %}
+    </div>
+  </section>
+  
 {% endif %}
 
 {% set vendors = {
-    "intel": {
-        "name": "Intel",
-        "color": "#00C7FD"
-    },
-    "amd": {
-        "name": "AMD",
-        "color": "#ef0707"
-    },
-    "nvidia": {
-        "name": "NVIDIA",
-        "color": "#76B900"
-    }
+    "intel": "Intel",
+    "amd": "AMD",
+    "nvidia": "NVIDIA"
 } %}
 
 {% macro vendored(vendor, detail) %}
-  {% set vendorDetail = vendors[vendor] %}
   
-  <div class="vendored-item" title="{{ vendorDetail.name }} {{ detail }}">
-    <svg role="img" aria-label="{{ vendorDetail.name }}" class="icon">
+  <div class="vendored-item" title="{{ vendors[vendor] }} {{ detail }}">
+    <svg role="img" aria-label="{{ vendors[vendor] }}" class="icon">
       <use href="/icons.svg#{{ vendor }}"></use>
     </svg>
     {{ detail }}
@@ -118,7 +112,7 @@ tags: game
     <section class="card column-card">
       <h3>Operating System</h3>
       {% for platform, version in game.system_requirements.operating_system %}
-        <div class="platform-row">
+        <div class="list-item platform-row">
             <svg role="img" aria-label="{{ platform | forceCapitalize }}" class="icon">
               <use href="/icons.svg#{{ platform }}"></use>
             </svg>
@@ -132,25 +126,25 @@ tags: game
     <section class="card column-card">
       <h3>Hardware</h3>
       {% if game.system_requirements.processor | length %}
-        <div class="meta-item">
+        <div class="list-item meta-item">
           Processor
           <span class="meta-value">{{ vendoredList(game.system_requirements.processor) }}</span>
         </div>
       {% endif %}
       {% if game.system_requirements.graphics_unit | length %}
-        <div class="meta-item">
+        <div class="list-item meta-item">
           Graphics Unit
           <span class="meta-value">{{ vendoredList(game.system_requirements.graphics_unit) }}</span>
         </div>
       {% endif %}
       {% if game.system_requirements.memory %}
-        <div class="meta-item">
+        <div class="list-item meta-item">
           Memory
           <span class="meta-value">{{ game.system_requirements.memory }}</span>
         </div>
       {% endif %}
       {% if game.system_requirements.storage %}
-        <div class="meta-item">
+        <div class="list-item meta-item">
           Storage
           <span class="meta-value">{{ game.system_requirements.storage }}</span>
         </div>

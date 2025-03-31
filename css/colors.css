@@ -16,6 +16,7 @@
     --background: var(--light-background);
     --on-background: var(--on-light-background);
     --faint-on-background: var(--faint-on-light-background);
+    --on-accent: var(--on-dark-background);
     
     
 

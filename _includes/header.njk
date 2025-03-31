@@ -1,15 +1,16 @@
+{% macro navItem(name, url) %}
+    <a href="{{ url }}" class="nav-item {% if page.url === url %}nav-active{% endif %}">{{ name }}</a>
+{% endmacro %}
+
 <header>
     <nav>
         <div>
             {% for game in games %}
-                {% set url = game | gameUrl %}
-                <a href="{{ url }}" class="nav-item {% if page.url == url %}nav-active{% endif %}"> {{ game.name }}</a>
+                {{ navItem(game.name, game | gameUrl) }}
             {% endfor %}
         </div>
         <div>
-            <a href="/" class="nav-item {% if page.url == '/' %}nav-active{% endif %} game-picker">
-                Game Picker
-            </a>
+            {{ navItem("Game Picker", "/") }}
         </div>
     </nav>
 </header>
