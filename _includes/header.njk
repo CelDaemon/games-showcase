@@ -1,5 +1,5 @@
-{% macro navItem(name, url) %}
-    <a href="{{ url }}" class="nav-item {% if page.url === url %}nav-active{% endif %}">{{ name }}</a>
+{% macro navItem(name, url, class) %}
+    <a href="{{ url }}" class="nav-item {% if page.url === url %}nav-active{% endif %} {{ class }}">{{ name }}</a>
 {% endmacro %}
 
 <header>
@@ -10,7 +10,7 @@
             {% endfor %}
         </div>
         <div>
-            {{ navItem("Game Picker", "/") }}
+            {{ navItem("Game Picker", "/", "game-picker") }}
         </div>
     </nav>
 </header>
