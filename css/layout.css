@@ -31,6 +31,7 @@ footer {
     text-align: center;
     padding-block: 0.5rem;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -52,7 +53,7 @@ header {
 
 .nav-active {
     background-color: var(--accent);
-    color: var(--dark-text);
+    color: var(--on-accent);
 }
 
 .nav-item:hover:not(.nav-active) {

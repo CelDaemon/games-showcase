@@ -11,7 +11,8 @@
     margin-block: 1rem;
     border: 2px solid transparent;
     @media(prefers-color-scheme: dark) {
-        background-color: hsl(from var(--accent) h s l / 20%);
+        background-color: hsl(from var(--accent) h calc(s - 65) calc(l - 40));
+        color: var(--on-accent);
     }
     @media(prefers-color-scheme: light) {
         border-color: var(--accent);
@@ -32,15 +33,24 @@
 .meta-item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px var(--faint-on-background) solid;
-    padding-block: 0.5rem;
-    margin-block: 0.5rem;
-    min-height: 50px;
     align-items: center;
     * {
         vertical-align: middle;
     }
 }
+.platform-row {
+    * {
+        vertical-align: middle;
+    }
+}
+
+.list-item {
+    border-bottom: 1px var(--faint-on-background) solid;
+    padding-block: 0.5rem;
+    margin-block: 0.5rem;
+    min-height: 50px;
+}
+
 .meta-value {
     text-align: right;
 }
@@ -76,7 +86,6 @@
     margin-top: 1.5rem;
 }
 .tag {
-    
     padding: 0.2rem 1rem;
     border-radius: 15px;
     
@@ -89,7 +98,7 @@
 }
 .filled-tag {
     background-color: var(--accent);
-    color: var(--dark-text);
+    color: var(--on-accent);
 }
 .game-name {
     font-size: 2rem;
@@ -125,15 +134,7 @@
     flex-grow: 1;
 }
 
-.platform-row {
-    border-bottom: 1px var(--faint-on-background) solid;
-    padding-block: 0.5rem;
-    margin-block: 0.5rem;
-    min-height: 50px;
-    * {
-        vertical-align: middle;
-    }
-}
+
 
 .vendored-item:not(:last-child) {
     margin-bottom: 0.5rem;
