@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /tag/
 
-Sitemap: https://games-showcase.voidgroup.net/sitemap.xml
+Sitemap:https://games-showcase.voidgroup.net/sitemap.xml
