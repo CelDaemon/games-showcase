@@ -103,7 +103,7 @@ section {
     background-color: var(--accent);
     color: var(--on-accent);
 }
-.game-name {
+#game-title {
     font-size: 2rem;
 }
 .image-container {
@@ -113,7 +113,7 @@ section {
     overflow-x: scroll;
     overflow-y: hidden; 
     scroll-snap-type: x mandatory;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
 }
 .game-image {
     max-width: 90%;

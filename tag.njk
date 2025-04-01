@@ -10,6 +10,6 @@ tags: page
 ---
 {% for game in games %}
     {% if game | contains(tag, 'tags') %}
-        <a href="{{ game | gameUrl }}">{{ game.name }}</a>
+        <a href="{{ game | gameUrl }}">{{ game.title }}</a>
     {% endif %}
 {% endfor %}

@@ -55,8 +55,8 @@ export default async function(eleventyConfig) {
 		})).jpeg[0]
 	});
 	eleventyConfig.addFilter("gameUrl", memoize(game => {
-		if(!game || typeof game.name !== "string") throw new Error("Could not generate game url for invalid game");
-		return `/game/${slugify(game.name, {decamelize: false})}/`;
+		if(!game || typeof game.title !== "string") throw new Error("Could not generate game url for invalid game");
+		return `/game/${slugify(game.title, {decamelize: false})}/`;
 	}));
 	eleventyConfig.addFilter("tagUrl", memoize(tag => {
 		if(typeof tag !== "string") throw new Error("Could not generate tag url for invalid tag");

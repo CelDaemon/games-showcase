@@ -7,7 +7,7 @@ pagination:
 layout: layout
 permalink: "{{ game | gameUrl }}"
 eleventyComputed:
-  title: "{{ game.name }}"
+  title: "{{ game.title }}"
   description: "{{ game.description }}"
   image: "{{ game.images | keys | first }}"
 style: "/css/game.css"
@@ -17,7 +17,7 @@ tags: game
   <div class="main-card card">
     <div class="description">
       <div>
-        <h1 class="game-name">{{ game.name }}</h1>
+        <h1 class="game-title">{{ game.title }}</h1>
         {{ game.description }}
       </div>
       <div class="tags">
@@ -48,12 +48,16 @@ tags: game
       <div class="list-item meta-item">
         Players
         <span class="meta-value">
-          {{ game.players | capitalize }}
+          {% if game.multiplayer %}
+            Multiplayer
+          {% else %}
+            Singleplayer
+          {% endif %}
           <span class="material-symbols-rounded icon" data-filled>
-            {% if game.players === 'singleplayer' %}
-              person
-            {% elif game.players === 'multiplayer' %}
+            {% if game.multiplayer %}
               groups
+            {% else %}
+              person
             {% endif %}
           </span>
         </span>
