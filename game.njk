@@ -5,137 +5,137 @@ pagination:
   alias: game
   addAllPagesToCollections: true
 layout: layout
-permalink: "{{ game | gameUrl }}"
+permalink: "{{- game | gameUrl -}}"
 eleventyComputed:
-  title: "{{ game.title }}"
-  description: "{{ game.description }}"
-  image: "{{ game.images | keys | first }}"
+  title: "{{- game.title -}}"
+  description: "{{- game.description -}}"
+  image: "{{- game.images | keys | first -}}"
 style: "/css/game.css"
 tags: game
 ---
 
-{% macro metaItem(name, value=null) %}
+{%- macro metaItem(name, value=null) -%}
   <div class="list-item meta-item">
-    {{ name }}
+    {{- name -}}
     <span class="meta-value">
-      {{ value if value else caller() | safe }}
+      {{- value if value else caller() | safe -}}
     </span>
   </div>
-{% endmacro %}
+{%- endmacro -%}
 
 <section>
   <div class="main-card card">
     <div class="description">
       <div>
-        <h1 class="game-title">{{ game.title }}</h1>
-        {{ game.description }}
+        <h1 class="game-title">{{- game.title -}}</h1>
+        {{- game.description -}}
       </div>
       <div class="tags">
-        {% for tag in game.tags %}
-          <a href="{{ tag | tagUrl }}" class="tag filled-tag">{{ tag | forceCapitalize }}</a>
-        {% endfor %}
+        {%- for tag in game.tags -%}
+          <a href="{{- tag | tagUrl -}}" class="tag filled-tag">{{- tag | forceCapitalize -}}</a>
+        {%- endfor -%}
       </div>
     </div>
     <div class="meta">
-      {% call metaItem('Rating') %}
-        {% set rating = ((game.rating * 2) | round) / 2 %}
-        {% for i in range(1, 6) %}
-          {% set fraction = i - rating %}
-          {% if rating >= i %}
+      {%- call metaItem('Rating') -%}
+        {%- set rating = ((game.rating * 2) | round) / 2 -%}
+        {%- for i in range(1, 6) -%}
+          {%- set fraction = i - rating -%}
+          {%- if rating >= i -%}
             <span class="material-symbols-rounded icon rating-icon" data-filled>star_rate</span>
-          {% elif (fraction > 0) and (fraction < 1) %}
+          {%- elif (fraction > 0) and (fraction < 1) -%}
             <span class="material-symbols-rounded icon rating-icon">star_rate_half</span>  
-          {% else %}
+          {%- else -%}
             <span class="material-symbols-rounded icon rating-icon">star_rate</span>
-          {% endif %}
-        {% endfor %}
-      {% endcall %}
-      {% call metaItem('Players') %}
-        {% if game.multiplayer %}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endcall -%}
+      {%- call metaItem('Players') -%}
+        {%- if game.multiplayer -%}
           Multiplayer
-        {% else %}
+        {%- else -%}
           Singleplayer
-        {% endif %}
+        {%- endif -%}
         <span class="material-symbols-rounded icon" data-filled>
-          {% if game.multiplayer %}
+          {%- if game.multiplayer -%}
             groups
-          {% else %}
+          {%- else -%}
             person
-          {% endif %}
+          {%- endif -%}
         </span>
-      {% endcall %}
-      {{ metaItem('Genre', game.genre | forceCapitalize) }}
-      {{ metaItem('Developer', game.developer | forceCapitalize) }}
-      {{ metaItem('Release Date', game.release) }}
+      {%- endcall -%}
+      {{- metaItem('Genre', game.genre | forceCapitalize) -}}
+      {{- metaItem('Developer', game.developer | forceCapitalize) -}}
+      {{- metaItem('Release Date', game.release) -}}
     </div>
   </div>
   
 </section>
 
-{% if game.images | length %}
+{%- if game.images | length -%}
   <section>
     <h2>Screenshots</h2>
     <div class="image-container">
-      {% for src, alt in game.images %}
-        <img class="game-image" alt="{{ alt }}" src="/img/{{ src }}" eleventy:widths="auto,720" sizes="auto">
-      {% endfor %}
+      {%- for src, alt in game.images -%}
+        <img class="game-image" alt="{{- alt -}}" src="/img/{{- src -}}" eleventy:widths="auto,720" sizes="auto">
+      {%- endfor -%}
     </div>
   </section>
-{% endif %}
+{%- endif -%}
 
-{% set vendors = {
+{%- set vendors = {
     "intel": "Intel",
     "amd": "AMD",
     "nvidia": "NVIDIA" 
   }
-%}
+-%}
 
-{% macro vendored(vendor, detail) %}
-  <div class="vendored-item" title="{{ vendors[vendor] }} {{ detail }}">
-    <svg role="img" aria-label="{{ vendors[vendor] }}" class="icon">
-      <use href="/icons.svg#{{ vendor }}"></use>
+{%- macro vendored(vendor, detail) -%}
+  <div class="vendored-item" title="{{- vendors[vendor] -}} {{- detail -}}">
+    <svg role="img" aria-label="{{- vendors[vendor] -}}" class="icon">
+      <use href="/icons.svg#{{- vendor -}}"></use>
     </svg>
-    {{ detail }}
+    {{- detail -}}
   </div>
-{% endmacro %}
+{%- endmacro -%}
 
-{% macro vendoredList(list) %}
-  {% for vendor, detail in list %}
-    {{ vendored(vendor, detail) }}
-  {% endfor %}
-{% endmacro %}
+{%- macro vendoredList(list) -%}
+  {%- for vendor, detail in list -%}
+    {{- vendored(vendor, detail) -}}
+  {%- endfor -%}
+{%- endmacro -%}
 
 <section>
   <h2>System Requirements</h2>
   <div class="column-card-container">
     <section class="card column-card">
       <h3>Operating System</h3>
-      {% for platform, version in game.system_requirements.operating_system %}
+      {%- for platform, version in game.system_requirements.operating_system -%}
         <div class="list-item platform-row">
-            <svg role="img" aria-label="{{ platform | forceCapitalize }}" class="icon">
-              <use href="/icons.svg#{{ platform }}"></use>
+            <svg role="img" aria-label="{{- platform | forceCapitalize -}}" class="icon">
+              <use href="/icons.svg#{{- platform -}}"></use>
             </svg>
-            <span>{{ platform | forceCapitalize }}</span>
-            {% if version !== true %}
-              <span class="tag outline-tag">{{ version }}</span>
-            {% endif %}
+            <span>{{- platform | forceCapitalize -}}</span>
+            {%- if version !== true -%}
+              <span class="tag outline-tag">{{- version -}}</span>
+            {%- endif -%}
           </div>
-      {% endfor %}
+      {%- endfor -%}
     </section>
     <section class="card column-card">
       <h3>Hardware</h3>
-      {% if game.system_requirements.processor | length %}
-        {{ metaItem('Processor', vendoredList(game.system_requirements.processor)) }}
-      {% endif %}
-      {% if game.system_requirements.graphics_unit | length %}
-        {{ metaItem('Graphics Unit', vendoredList(game.system_requirements.graphics_unit)) }}
-      {% endif %}
-      {% if game.system_requirements.memory %}
-        {{ metaItem('Memory', game.system_requirements.memory) }}
-      {% endif %}
-      {% if game.system_requirements.storage %}
-        {{ metaItem('Storage', game.system_requirements.storage) }}
-      {% endif %}
+      {%- if game.system_requirements.processor | length -%}
+        {{- metaItem('Processor', vendoredList(game.system_requirements.processor)) -}}
+      {%- endif -%}
+      {%- if game.system_requirements.graphics_unit | length -%}
+        {{- metaItem('Graphics Unit', vendoredList(game.system_requirements.graphics_unit)) -}}
+      {%- endif -%}
+      {%- if game.system_requirements.memory -%}
+        {{- metaItem('Memory', game.system_requirements.memory) -}}
+      {%- endif -%}
+      {%- if game.system_requirements.storage -%}
+        {{- metaItem('Storage', game.system_requirements.storage) -}}
+      {%- endif -%}
     </section>
   </div>
 </section>

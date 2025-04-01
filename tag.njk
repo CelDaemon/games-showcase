@@ -4,12 +4,12 @@ pagination:
   size: 1
   alias: tag
   addAllPagesToCollections: true
-permalink: "{{ tag | tagUrl }}"
+permalink: "{{- tag | tagUrl -}}"
 layout: layout
 tags: page
 ---
-{% for game in games %}
-    {% if game | contains(tag, 'tags') %}
-        <a href="{{ game | gameUrl }}">{{ game.title }}</a>
-    {% endif %}
-{% endfor %}
+{%- for game in games -%}
+    {%- if game | contains(tag, 'tags') -%}
+        <a href="{{- game | gameUrl -}}">{{- game.title -}}</a>
+    {%- endif -%}
+{%- endfor -%}
