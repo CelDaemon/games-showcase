@@ -3,14 +3,14 @@
 {%- endmacro -%}
 
 <header>
-    <nav>
-        <div>
-            {%- for game in games -%}
-                {{- navItem(game.title, game | gameUrl) -}}
-            {%- endfor -%}
-        </div>
-        <div>
-            {{- navItem("Game Picker", "/", "game-picker") -}}
-        </div>
-    </nav>
+  <nav>
+    <div>
+      {%- for game in games -%}
+        {{- navItem(game.title, game | gameUrl) -}}
+      {%- endfor -%}
+    </div>
+    <div>
+      {{- navItem("Game Picker", "/", "game-picker") -}}
+    </div>
+  </nav>
 </header>

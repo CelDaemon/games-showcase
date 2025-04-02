@@ -64,7 +64,7 @@ export default async function(eleventyConfig) {
 	}));
 	eleventyConfig.addTransform("prettier", (content, output) => {
 		const extension = extname(output);
-		if(extension !== ".html") return content;
+		if(extension !== ".html" && extension !== ".xml" && extension !== ".svg") return content;
 		return format(content, { parser: 'html', htmlWhitespaceSensitivity: 'ignore' });
 	});
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin,
