@@ -1,5 +1,5 @@
 {%- macro navItem(name, url, class) -%}
-    <a href="{{- url -}}" class="nav-item {%- if page.url === url -%}nav-active{%- endif -%} {{- class -}}">{{- name -}}</a>
+    <a href="{{- url -}}" class="nav-item {% if page.url === url -%} nav-active {%- endif %} {{ class }}">{{- name -}}</a>
 {%- endmacro -%}
 
 <header>
