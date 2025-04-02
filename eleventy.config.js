@@ -3,9 +3,6 @@ import {eleventyImageTransformPlugin} from "@11ty/eleventy-img"
 import Image from "@11ty/eleventy-img"
 import {extname, relative, join, parse} from 'path';
 import {format} from 'prettier';
-function lens(object, path) {
-	return path.split(".").reduce((object, key) => object && object[key] ? object[key] : null, object);
-}
 function memoize(callback) {
 	let cache = new Map();
 
@@ -33,8 +30,6 @@ export default async function(eleventyConfig) {
 		const outputName = width ? `${srcParsed.name}-${id}-${width}.${format}` : `${srcParsed.name}-${id}.${format}`;
 		return join(relative(join(eleventyConfig.directories.input, 'img'), srcParsed.dir), outputName);
 	}
-	eleventyConfig.addFilter("contains", (object, value, key = "") => lens(object, key)?.includes(value) ?? false);
-	eleventyConfig.addFilter("flatMap", lens);
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("css/*.css");
 	eleventyConfig.addFilter("forceCapitalize", value => {
@@ -52,7 +47,7 @@ export default async function(eleventyConfig) {
 			outputDir: join(eleventyConfig.directories.output, 'img'),
 			urlPath: "/img/",
 			filenameFormat
-		})).jpeg[0]
+		})).jpeg[0];
 	});
 	eleventyConfig.addFilter("gameUrl", memoize(game => {
 		if(!game || typeof game.title !== "string") throw new Error("Could not generate game url for invalid game");

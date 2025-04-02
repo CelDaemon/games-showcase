@@ -9,7 +9,7 @@ layout: layout
 tags: page
 ---
 {%- for game in games -%}
-  {%- if game | contains(tag, 'tags') -%}
+  {%- if tag in game.tags -%}
     <a href="{{- game | gameUrl -}}">{{- game.title -}}</a>
   {%- endif -%}
 {%- endfor -%}
