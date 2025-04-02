@@ -18,7 +18,11 @@ tags: game
   <div class="list-item meta-item">
     {{- name -}}
     <span class="meta-value">
-      {{- value if value else caller() | safe -}}
+      {%- if value -%}
+        {{- value -}}
+      {%- else -%}
+        {{- caller() -}}
+      {%- endif -%}
     </span>
   </div>
 {%- endmacro -%}
