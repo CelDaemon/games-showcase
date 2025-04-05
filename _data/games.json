@@ -41,7 +41,7 @@
     },
     {
         "title": "Persona 5 Royal",
-        "description": " Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!",
+        "description": "Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!",
         "tags": [
             "JRPG",
             "story",
@@ -52,9 +52,6 @@
         "genre": "RPG",
         "developer": "ATLUS",
         "multiplayer": false,
-        "images": [
-            
-        ],
         "system_requirements": {
             "operating_system": {
                 "windows": "10",
