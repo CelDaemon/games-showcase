@@ -9,23 +9,23 @@ permalink: "{{- game | gameUrl -}}"
 eleventyComputed:
   title: "{{- game.title -}}"
   description: "{{- game.description -}}"
-  image: "{{- game.images | keys | first if game.images else undefined -}}"
+  image: "{{- game.images | keys | first if game.images -}}"
 style: "/css/game.css"
 tags: game
 ---
 
 
-{%- macro metaItem(name) -%}
-  <div class="list-item meta-item">
+{%- macro propertyItem(name, content) -%}
+  <div class="list-item property-item">
     {{- name -}}
-    <span class="meta-value">
-      {{- caller() -}}
+    <span class="property-value">
+      {{- content or caller() -}}
     </span>
     </div>
 {%- endmacro -%}
 
-{%- macro fontIcon(icon, classes=[], filled=false) -%}
-  <span class="material-symbols-rounded {{ classes.join(' ') }}" {% if filled -%}data-filled{%- endif %}>{{- icon -}}</span>
+{%- macro fontIcon(icon, class, filled=false) -%}
+  <span class="material-symbols-rounded icon {{ class }}" {% if filled -%}data-filled{%- endif %}>{{- icon -}}</span>
 {%- endmacro -%}
 
 {%- macro svgIcon(icon, label) -%}
@@ -36,7 +36,6 @@ tags: game
 
 {%- macro iconValue(value, icon) -%}
   <span class="icon-value">
-    
     {{- icon -}}
     <span>
       {{- value -}}
@@ -46,45 +45,38 @@ tags: game
 
 <section>
   <div class="main-card card">
-    <div class="description">
+    <div id="game-description">
       <div>
         <h1 id="game-title">{{- game.title -}}</h1>
         {{- game.description -}}
       </div>
       <div class="tags">
         {%- for tag in game.tags -%}
-          <a href="{{- tag | tagUrl -}}" class="tag filled-tag">
+          <a href="{{- tag | tagUrl -}}" class="tag" data-filled>
             {{- tag | forceCapitalize -}}
           </a>
         {%- endfor -%}
       </div>
     </div>
-    <div id="meta">
-      {%- call metaItem('Rating') -%}
+    <div id="game-properties">
+      {%- call propertyItem('Rating') -%}
         {%- set rating = ((game.rating * 2) | round) / 2 -%}
         {%- for i in range(1, 6) -%}
           {%- set fraction = i - rating -%}
+          {%- set icon = 'star_rate' -%}
+          {%- set filled = false -%}
           {%- if rating >= i -%}
-            {{ fontIcon('star_rate', ['icon', 'rating-icon'], filled=true) }}
+            {%- set filled = true -%}
           {%- elif (fraction > 0) and (fraction < 1) -%}
-            {{ fontIcon('star_rate_half', ['icon', 'rating-icon']) }}
-          {%- else -%}
-            {{ fontIcon('star_rate', ['icon', 'rating-icon']) }}
+            {%- set icon = 'star_rate_half' -%}
           {%- endif -%}
+          {{- fontIcon(icon, 'icon-rating', filled=filled) -}}
         {%- endfor -%}
       {%- endcall -%}
-      {%- call metaItem('Players') -%}
-        {{ iconValue('Multiplayer' if game.multiplayer else 'Singleplayer', fontIcon('groups' if game.multiplayer else 'person', ['icon'], filled=true)) }}
-      {%- endcall -%}
-      {%- call metaItem('Genre') -%}
-        {{- game.genre | forceCapitalize -}}
-      {%- endcall -%}
-      {%- call metaItem('Developer') -%}
-        {{- game.developer | forceCapitalize -}}
-      {%- endcall -%}
-      {%- call metaItem('Release Date') -%}
-        {{- game.release -}}
-      {%- endcall -%}
+      {{- propertyItem('Players', iconValue('Multiplayer' if game.multiplayer else 'Singleplayer', fontIcon('groups' if game.multiplayer else 'person', filled=true))) -}}
+      {{- propertyItem('Genre', game.genre | forceCapitalize) -}}
+      {{- propertyItem('Developer', game.developer | forceCapitalize) -}}
+      {{- propertyItem('Release Date', game.release) -}}
     </div>
   </div>
   
@@ -93,7 +85,7 @@ tags: game
 {%- if game.images -%}
   <section>
     <h2>Screenshots</h2>
-    <div class="image-container">
+    <div id="game-images">
       {%- for src, alt in game.images -%}
         <img class="game-image" alt="{{- alt -}}" src="/img/{{- src -}}" eleventy:widths="auto,720" sizes="auto">
       {%- endfor -%}
@@ -126,7 +118,7 @@ tags: game
         <div class="list-item">
           {{ iconValue(platform | forceCapitalize, svgIcon(platform, platform | forceCapitalize)) }}
           {%- if version !== true -%}
-            <span class="tag outline-tag">{{- version -}}</span>
+            <span class="tag">{{- version -}}</span>
           {%- endif -%}
         </div>
       {%- endfor -%}
@@ -134,25 +126,22 @@ tags: game
     <section class="card column-card">
       <h3>Hardware</h3>
       {%- if game.system_requirements.processor | length -%}
-        {%- call metaItem('Processor') -%}
-          {{- vendoredList(game.system_requirements.processor) -}}
-        {%- endcall -%}
+        {{- propertyItem('Processor', vendoredList(game.system_requirements.processor)) -}}
       {%- endif -%}
       {%- if game.system_requirements.graphics_unit | length -%}
-        {%- call metaItem('Graphics Unit') -%}
-          {{- vendoredList(game.system_requirements.graphics_unit) -}}
-        {%- endcall -%}
+        {{- propertyItem('Graphics Unit', vendoredList(game.system_requirements.graphics_unit)) -}}
       {%- endif -%}
       {%- if game.system_requirements.memory -%}
-        {%- call metaItem('Memory') -%}
-          {{- game.system_requirements.memory -}}
-        {%- endcall -%}
+        {{- propertyItem('Memory', game.system_requirements.memory) -}}
       {%- endif -%}
       {%- if game.system_requirements.storage -%}
-        {%- call metaItem('Storage') -%}
-          {{- game.system_requirements.storage -}}
-        {%- endcall -%}
+        {{- propertyItem('Storage', game.system_requirements.storage) -}}
       {%- endif -%}
     </section>
   </div>
+</section>
+
+<section>
+  <h2>Reviews</h2>
+  
 </section>
