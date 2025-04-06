@@ -29,7 +29,7 @@ section {
     width: 600px;
 }
 
-.meta {
+#meta {
     flex-grow: 1;
 }
 
@@ -37,14 +37,6 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    * {
-        vertical-align: middle;
-    }
-}
-.platform-row {
-    * {
-        vertical-align: middle;
-    }
 }
 
 .list-item {
@@ -52,6 +44,9 @@ section {
     padding-block: 0.5rem;
     margin-block: 0.5rem;
     min-height: 50px;
+    & > * {
+        vertical-align: middle;
+    }
 }
 
 .meta-value {
@@ -141,4 +136,11 @@ section {
 
 .vendored-item:not(:last-child) {
     margin-bottom: 0.5rem;
+}
+
+.icon-value {
+    display: inline-block;
+    & > * {
+        vertical-align: middle;
+    }
 }
