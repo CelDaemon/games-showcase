@@ -18,7 +18,6 @@ body {
     color: var(--on-background);
     display: flex;
     flex-flow: column;
-    width: 100%;
 }
 main {
     margin-inline: auto;

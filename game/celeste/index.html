@@ -65,7 +65,7 @@
       <main>
         <section>
           <div class="main-card card">
-            <div class="description">
+            <div id="game-description">
               <div>
                 <h1 id="game-title">Celeste</h1>
                 Help Madeline survive her inner demons on her journey to the top
@@ -75,45 +75,49 @@
                 mystery of the mountain.
               </div>
               <div class="tags">
-                <a href="/tag/platformer/" class="tag filled-tag">Platformer</a>
-                <a href="/tag/difficult/" class="tag filled-tag">Difficult</a>
-                <a href="/tag/pixelart/" class="tag filled-tag">Pixelart</a>
-                <a href="/tag/2d/" class="tag filled-tag">2D</a>
+                <a href="/tag/platformer/" class="tag" data-filled="">
+                  Platformer
+                </a>
+                <a href="/tag/difficult/" class="tag" data-filled="">
+                  Difficult
+                </a>
+                <a href="/tag/pixelart/" class="tag" data-filled="">Pixelart</a>
+                <a href="/tag/2d/" class="tag" data-filled="">2D</a>
               </div>
             </div>
-            <div id="meta">
-              <div class="list-item meta-item">
+            <div id="game-properties">
+              <div class="list-item property-item">
                 Rating
-                <span class="meta-value">
+                <span class="property-value">
                   <span
-                    class="material-symbols-rounded icon rating-icon"
+                    class="material-symbols-rounded icon icon-rating"
                     data-filled=""
                   >
                     star_rate
                   </span>
                   <span
-                    class="material-symbols-rounded icon rating-icon"
+                    class="material-symbols-rounded icon icon-rating"
                     data-filled=""
                   >
                     star_rate
                   </span>
                   <span
-                    class="material-symbols-rounded icon rating-icon"
+                    class="material-symbols-rounded icon icon-rating"
                     data-filled=""
                   >
                     star_rate
                   </span>
-                  <span class="material-symbols-rounded icon rating-icon">
+                  <span class="material-symbols-rounded icon icon-rating">
                     star_rate_half
                   </span>
-                  <span class="material-symbols-rounded icon rating-icon">
+                  <span class="material-symbols-rounded icon icon-rating">
                     star_rate
                   </span>
                 </span>
               </div>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Players
-                <span class="meta-value">
+                <span class="property-value">
                   <span class="icon-value">
                     <span class="material-symbols-rounded icon" data-filled="">
                       person
@@ -122,24 +126,24 @@
                   </span>
                 </span>
               </div>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Genre
-                <span class="meta-value">Platformer</span>
+                <span class="property-value">Platformer</span>
               </div>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Developer
-                <span class="meta-value">Extremely OK Games</span>
+                <span class="property-value">Extremely OK Games</span>
               </div>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Release Date
-                <span class="meta-value">25 Jan, 2018</span>
+                <span class="property-value">25 Jan, 2018</span>
               </div>
             </div>
           </div>
         </section>
         <section>
           <h2>Screenshots</h2>
-          <div class="image-container">
+          <div id="game-images">
             <picture>
               <source
                 type="image/webp"
@@ -242,7 +246,7 @@
                   </svg>
                   <span>Windows</span>
                 </span>
-                <span class="tag outline-tag">7</span>
+                <span class="tag">7</span>
               </div>
               <div class="list-item">
                 <span class="icon-value">
@@ -251,7 +255,7 @@
                   </svg>
                   <span>Mac</span>
                 </span>
-                <span class="tag outline-tag">10</span>
+                <span class="tag">10</span>
               </div>
               <div class="list-item">
                 <span class="icon-value">
@@ -264,9 +268,9 @@
             </section>
             <section class="card column-card">
               <h3>Hardware</h3>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Processor
-                <span class="meta-value">
+                <span class="property-value">
                   <div class="vendored-item">
                     <span class="icon-value">
                       <svg role="img" aria-label="Intel" class="icon">
@@ -277,9 +281,9 @@
                   </div>
                 </span>
               </div>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Graphics Unit
-                <span class="meta-value">
+                <span class="property-value">
                   <div class="vendored-item">
                     <span class="icon-value">
                       <svg role="img" aria-label="Intel" class="icon">
@@ -290,16 +294,20 @@
                   </div>
                 </span>
               </div>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Memory
-                <span class="meta-value">2 GB</span>
+                <span class="property-value">2 GB</span>
               </div>
-              <div class="list-item meta-item">
+              <div class="list-item property-item">
                 Storage
-                <span class="meta-value">1200 MB</span>
+                <span class="property-value">1200 MB</span>
               </div>
             </section>
           </div>
+        </section>
+
+        <section>
+          <h2>Reviews</h2>
         </section>
       </main>
     </div>
