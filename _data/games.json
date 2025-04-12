@@ -52,6 +52,12 @@
         "genre": "RPG",
         "developer": "ATLUS",
         "multiplayer": false,
+        "images": {
+            "/persona-5-royal/treasure.png": "Finding a palace's treasure",
+            "/persona-5-royal/boss.png": "The first boss of the game",
+            "/persona-5-royal/restaurant.png": "The team celebrating a successful mission",
+            "/persona-5-royal/all-out-attack.png": "The player performing an All-Out Attack"
+        },
         "system_requirements": {
             "operating_system": {
                 "windows": "10",
